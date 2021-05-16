@@ -1,0 +1,368 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		795DE846265028EB00D6CE04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DE845265028EB00D6CE04 /* AppDelegate.swift */; };
+		795DE848265028EB00D6CE04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DE847265028EB00D6CE04 /* ViewController.swift */; };
+		795DE84B265028EB00D6CE04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795DE849265028EB00D6CE04 /* Main.storyboard */; };
+		795DE84E265028EB00D6CE04 /* LogoEat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 795DE84C265028EB00D6CE04 /* LogoEat.xcdatamodeld */; };
+		795DE850265028ED00D6CE04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795DE84F265028ED00D6CE04 /* Assets.xcassets */; };
+		795DE853265028ED00D6CE04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795DE851265028ED00D6CE04 /* LaunchScreen.storyboard */; };
+		79A15A7726512341002D2252 /* RestaurantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A15A7626512341002D2252 /* RestaurantsTableViewController.swift */; };
+		79A15A792651241B002D2252 /* BookingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A15A782651241B002D2252 /* BookingsTableViewController.swift */; };
+		79A15A7B26513883002D2252 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A15A7A26513883002D2252 /* CustomTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		795DE842265028EB00D6CE04 /* LogoEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogoEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		795DE845265028EB00D6CE04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		795DE847265028EB00D6CE04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		795DE84A265028EB00D6CE04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		795DE84D265028EB00D6CE04 /* LogoEat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LogoEat.xcdatamodel; sourceTree = "<group>"; };
+		795DE84F265028ED00D6CE04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		795DE852265028ED00D6CE04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		795DE854265028ED00D6CE04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79A15A7626512341002D2252 /* RestaurantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsTableViewController.swift; sourceTree = "<group>"; };
+		79A15A782651241B002D2252 /* BookingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingsTableViewController.swift; sourceTree = "<group>"; };
+		79A15A7A26513883002D2252 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		795DE83F265028EB00D6CE04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		795DE839265028EB00D6CE04 = {
+			isa = PBXGroup;
+			children = (
+				795DE844265028EB00D6CE04 /* LogoEat */,
+				795DE843265028EB00D6CE04 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		795DE843265028EB00D6CE04 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				795DE842265028EB00D6CE04 /* LogoEat.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		795DE844265028EB00D6CE04 /* LogoEat */ = {
+			isa = PBXGroup;
+			children = (
+				795DE845265028EB00D6CE04 /* AppDelegate.swift */,
+				795DE847265028EB00D6CE04 /* ViewController.swift */,
+				79A15A7626512341002D2252 /* RestaurantsTableViewController.swift */,
+				79A15A7A26513883002D2252 /* CustomTableViewCell.swift */,
+				79A15A782651241B002D2252 /* BookingsTableViewController.swift */,
+				795DE849265028EB00D6CE04 /* Main.storyboard */,
+				795DE84F265028ED00D6CE04 /* Assets.xcassets */,
+				795DE851265028ED00D6CE04 /* LaunchScreen.storyboard */,
+				795DE854265028ED00D6CE04 /* Info.plist */,
+				795DE84C265028EB00D6CE04 /* LogoEat.xcdatamodeld */,
+			);
+			path = LogoEat;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		795DE841265028EB00D6CE04 /* LogoEat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 795DE857265028ED00D6CE04 /* Build configuration list for PBXNativeTarget "LogoEat" */;
+			buildPhases = (
+				795DE83E265028EB00D6CE04 /* Sources */,
+				795DE83F265028EB00D6CE04 /* Frameworks */,
+				795DE840265028EB00D6CE04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LogoEat;
+			productName = LogoEat;
+			productReference = 795DE842265028EB00D6CE04 /* LogoEat.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		795DE83A265028EB00D6CE04 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "dsadas asdasd";
+				TargetAttributes = {
+					795DE841265028EB00D6CE04 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 795DE83D265028EB00D6CE04 /* Build configuration list for PBXProject "LogoEat" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 795DE839265028EB00D6CE04;
+			productRefGroup = 795DE843265028EB00D6CE04 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				795DE841265028EB00D6CE04 /* LogoEat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		795DE840265028EB00D6CE04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				795DE853265028ED00D6CE04 /* LaunchScreen.storyboard in Resources */,
+				795DE850265028ED00D6CE04 /* Assets.xcassets in Resources */,
+				795DE84B265028EB00D6CE04 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		795DE83E265028EB00D6CE04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79A15A7B26513883002D2252 /* CustomTableViewCell.swift in Sources */,
+				795DE84E265028EB00D6CE04 /* LogoEat.xcdatamodeld in Sources */,
+				795DE848265028EB00D6CE04 /* ViewController.swift in Sources */,
+				79A15A7726512341002D2252 /* RestaurantsTableViewController.swift in Sources */,
+				79A15A792651241B002D2252 /* BookingsTableViewController.swift in Sources */,
+				795DE846265028EB00D6CE04 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		795DE849265028EB00D6CE04 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				795DE84A265028EB00D6CE04 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		795DE851265028ED00D6CE04 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				795DE852265028ED00D6CE04 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		795DE855265028ED00D6CE04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		795DE856265028ED00D6CE04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		795DE858265028ED00D6CE04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LogoEat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "-.LogoEat";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		795DE859265028ED00D6CE04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LogoEat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "-.LogoEat";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		795DE83D265028EB00D6CE04 /* Build configuration list for PBXProject "LogoEat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				795DE855265028ED00D6CE04 /* Debug */,
+				795DE856265028ED00D6CE04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		795DE857265028ED00D6CE04 /* Build configuration list for PBXNativeTarget "LogoEat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				795DE858265028ED00D6CE04 /* Debug */,
+				795DE859265028ED00D6CE04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		795DE84C265028EB00D6CE04 /* LogoEat.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				795DE84D265028EB00D6CE04 /* LogoEat.xcdatamodel */,
+			);
+			currentVersion = 795DE84D265028EB00D6CE04 /* LogoEat.xcdatamodel */;
+			path = LogoEat.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 795DE83A265028EB00D6CE04 /* Project object */;
+}
