@@ -16,6 +16,9 @@
 		79A15A7726512341002D2252 /* RestaurantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A15A7626512341002D2252 /* RestaurantsTableViewController.swift */; };
 		79A15A792651241B002D2252 /* BookingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A15A782651241B002D2252 /* BookingsTableViewController.swift */; };
 		79A15A7B26513883002D2252 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A15A7A26513883002D2252 /* CustomTableViewCell.swift */; };
+		79A697F52651739A001D57E3 /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A697F42651739A001D57E3 /* RestaurantModel.swift */; };
+		79A697F72651A7B5001D57E3 /* BookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A697F62651A7B5001D57E3 /* BookingModel.swift */; };
+		79A697F92651BDE1001D57E3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A697F82651BDE1001D57E3 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		79A15A7626512341002D2252 /* RestaurantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsTableViewController.swift; sourceTree = "<group>"; };
 		79A15A782651241B002D2252 /* BookingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingsTableViewController.swift; sourceTree = "<group>"; };
 		79A15A7A26513883002D2252 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		79A697F42651739A001D57E3 /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
+		79A697F62651A7B5001D57E3 /* BookingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingModel.swift; sourceTree = "<group>"; };
+		79A697F82651BDE1001D57E3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +71,11 @@
 				795DE845265028EB00D6CE04 /* AppDelegate.swift */,
 				795DE847265028EB00D6CE04 /* ViewController.swift */,
 				79A15A7626512341002D2252 /* RestaurantsTableViewController.swift */,
+				79A697F82651BDE1001D57E3 /* DetailViewController.swift */,
 				79A15A7A26513883002D2252 /* CustomTableViewCell.swift */,
 				79A15A782651241B002D2252 /* BookingsTableViewController.swift */,
+				79A697F42651739A001D57E3 /* RestaurantModel.swift */,
+				79A697F62651A7B5001D57E3 /* BookingModel.swift */,
 				795DE849265028EB00D6CE04 /* Main.storyboard */,
 				795DE84F265028ED00D6CE04 /* Assets.xcassets */,
 				795DE851265028ED00D6CE04 /* LaunchScreen.storyboard */,
@@ -147,12 +156,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79A697F92651BDE1001D57E3 /* DetailViewController.swift in Sources */,
 				79A15A7B26513883002D2252 /* CustomTableViewCell.swift in Sources */,
 				795DE84E265028EB00D6CE04 /* LogoEat.xcdatamodeld in Sources */,
+				79A697F52651739A001D57E3 /* RestaurantModel.swift in Sources */,
 				795DE848265028EB00D6CE04 /* ViewController.swift in Sources */,
 				79A15A7726512341002D2252 /* RestaurantsTableViewController.swift in Sources */,
 				79A15A792651241B002D2252 /* BookingsTableViewController.swift in Sources */,
 				795DE846265028EB00D6CE04 /* AppDelegate.swift in Sources */,
+				79A697F72651A7B5001D57E3 /* BookingModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
