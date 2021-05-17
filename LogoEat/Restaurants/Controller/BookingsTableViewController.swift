@@ -23,6 +23,7 @@ class BookingsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = UIColor(red: 0.239, green: 0.251, blue: 0.357, alpha: 1)
         let sections: NSSet = NSSet(array: sectionsInTable)
         for booking in bookings{
             if !sections.contains(booking.date) {
@@ -58,37 +59,12 @@ class BookingsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RestaurantTableViewCell
         
         let sectionItems = self.getSectionItems(section: indexPath.section)
         let booking = sectionItems[indexPath.row]
         
-        cell.nameLabel.text = booking.restaurant.name
-        cell.nameLabel.font = UIFont(name: "OpenSans-SemiBold", size: 18)
-        
-        cell.ratingLabel.text = String(booking.restaurant.rating)
-        switch booking.restaurant.rating {
-        case 0..<5:
-            cell.ratingLabel.backgroundColor = UIColor(red: 0.878, green: 0.478, blue: 0.373, alpha: 1)
-        default:
-            cell.ratingLabel.backgroundColor = UIColor(red: 0.239, green: 0.251, blue: 0.357, alpha: 1)
-        }
-        cell.ratingLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        cell.ratingLabel.layer.cornerRadius = 3
-        cell.ratingLabel.layer.masksToBounds = true
-        
-        cell.cuisineLabel.text = booking.restaurant.cuisine
-        
-        cell.locationLabel.text = booking.restaurant.location
-        
-        
-        cell.restaurantImage.image = UIImage(named: booking.restaurant.image)
-        cell.restaurantImage.layer.cornerRadius = 10
-        cell.restaurantImage.clipsToBounds = true
-        
-        
-        cell.mapMarkerImage.image = UIImage(named: "mapMarker")
-        cell.mapMarkerImage.clipsToBounds = true
+        cell.configure(with: booking.restaurant)
         
         
         return cell
@@ -102,7 +78,7 @@ class BookingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: {(_,_) in
-            let cell = tableView.cellForRow(at: indexPath) as! CustomTableViewCell
+            let cell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
             cell.nameLabel.text = "DELETED"
             cell.cuisineLabel.text = "Let's imagine it was deleted"
             cell.locationLabel.text = "Seriously.Deleted."
