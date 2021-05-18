@@ -10,6 +10,7 @@
 		7915D94726541BA30023CF3B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915D94626541BA30023CF3B /* NetworkService.swift */; };
 		7915D94B26541DC50023CF3B /* AuthorizationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915D94A26541DC50023CF3B /* AuthorizationNetworkService.swift */; };
 		7915D94D265424200023CF3B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915D94C265424200023CF3B /* LoginViewController.swift */; };
+		7915D954265456730023CF3B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915D953265456730023CF3B /* SettingsViewController.swift */; };
 		795DE846265028EB00D6CE04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DE845265028EB00D6CE04 /* AppDelegate.swift */; };
 		795DE848265028EB00D6CE04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DE847265028EB00D6CE04 /* ViewController.swift */; };
 		795DE84B265028EB00D6CE04 /* Restaurant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795DE849265028EB00D6CE04 /* Restaurant.storyboard */; };
@@ -30,6 +31,7 @@
 		7915D94626541BA30023CF3B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		7915D94A26541DC50023CF3B /* AuthorizationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationNetworkService.swift; sourceTree = "<group>"; };
 		7915D94C265424200023CF3B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7915D953265456730023CF3B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		795DE842265028EB00D6CE04 /* LogoEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogoEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		795DE845265028EB00D6CE04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		795DE847265028EB00D6CE04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,38 @@
 			path = AuthorizationNetworkService;
 			sourceTree = "<group>";
 		};
+		7915D94E2654561A0023CF3B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				7915D951265456390023CF3B /* Model */,
+				7915D950265456320023CF3B /* View */,
+				7915D94F265456290023CF3B /* Controller */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		7915D94F265456290023CF3B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7915D953265456730023CF3B /* SettingsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7915D950265456320023CF3B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7915D951265456390023CF3B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		795DE839265028EB00D6CE04 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +128,7 @@
 		795DE844265028EB00D6CE04 /* LogoEat */ = {
 			isa = PBXGroup;
 			children = (
+				7915D94E2654561A0023CF3B /* Settings */,
 				79A698022652B747001D57E3 /* Authorization */,
 				79A697FE2652AF87001D57E3 /* Restaurants */,
 				79A697FA2652AF36001D57E3 /* Application */,
@@ -293,6 +328,7 @@
 				795DE848265028EB00D6CE04 /* ViewController.swift in Sources */,
 				79A15A7726512341002D2252 /* RestaurantsTableViewController.swift in Sources */,
 				79A15A792651241B002D2252 /* BookingsTableViewController.swift in Sources */,
+				7915D954265456730023CF3B /* SettingsViewController.swift in Sources */,
 				795DE846265028EB00D6CE04 /* AppDelegate.swift in Sources */,
 				79A6980B2652D7B0001D57E3 /* UserModel.swift in Sources */,
 				7915D94D265424200023CF3B /* LoginViewController.swift in Sources */,

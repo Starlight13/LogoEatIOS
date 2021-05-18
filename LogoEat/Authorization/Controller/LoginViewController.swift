@@ -28,6 +28,15 @@ class LoginViewController: UIViewController {
             guard let token = dict["token"] as? String else {return}
             User.token = token;
         }
+        print(User.token)
+        if User.token != nil {
+            let storyboard = UIStoryboard(name: "Restaurant", bundle: .main)
+            let controller = storyboard.instantiateViewController(withIdentifier: "tabBarController")
+            UIView.transition(with: UIApplication.shared.keyWindow!, duration: 0.5, options: .transitionFlipFromTop,
+                                  animations: {
+                                    UIApplication.shared.keyWindow!.rootViewController = controller
+                })
+        }
         
     }
     

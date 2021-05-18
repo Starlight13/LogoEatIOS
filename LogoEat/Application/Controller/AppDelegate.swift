@@ -16,7 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        var initialViewController: UIViewController
+        if User.token != nil {
+            let storyboard = UIStoryboard(name: "Restaurant", bundle: .main)
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "tabBarController")
+        } else {
+            let storyboard = UIStoryboard(name: "Authorization", bundle: .main)
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "loginViewController")
+        }
+
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
         return true
     }
 

@@ -22,11 +22,12 @@
                     <connections>
                         <segue destination="1AN-WE-Vgc" kind="relationship" relationship="viewControllers" id="nDN-ME-522"/>
                         <segue destination="nOY-lg-w2M" kind="relationship" relationship="viewControllers" id="YUe-yp-Mak"/>
+                        <segue destination="4cW-Pb-lSv" kind="relationship" relationship="viewControllers" id="szK-AD-7nO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SNt-Id-l4p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1002" y="-396"/>
+            <point key="canvasLocation" x="-1200" y="-370"/>
         </scene>
         <!--My Bookings-->
         <scene sceneID="e7C-dY-kTO">
@@ -132,11 +133,11 @@
             </objects>
             <point key="canvasLocation" x="867" y="21"/>
         </scene>
-        <!--Item-->
+        <!--Bookings-->
         <scene sceneID="YGP-mV-qcD">
             <objects>
                 <navigationController id="nOY-lg-w2M" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="uOX-Fk-SnQ">
+                    <tabBarItem key="tabBarItem" title="Bookings" id="uOX-Fk-SnQ">
                         <color key="badgeColor" systemColor="systemBackgroundColor"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FI8-oN-UcG">
@@ -153,6 +154,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ek3-Vy-MSe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-26" y="21"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="WUH-RX-Sqz">
+            <objects>
+                <navigationController id="4cW-Pb-lSv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Pgz-Pk-4ML"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eRX-3h-ciU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="guQ-r0-GSz" kind="relationship" relationship="rootViewController" id="Dwa-VR-XAR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NsW-rw-fST" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26" y="735"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="CNA-7h-ulm">
+            <objects>
+                <viewController id="guQ-r0-GSz" customClass="SettingsViewController" customModule="LogoEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nQ6-Bm-b8t">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xv1-QM-4h6">
+                                <rect key="frame" x="181.5" y="433" width="51" height="30"/>
+                                <state key="normal" title="LogOut">
+                                    <color key="titleColor" red="0.2256951928" green="0.22830384970000001" blue="0.3333465457" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DbB-Dj-AxA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xv1-QM-4h6" firstAttribute="centerX" secondItem="nQ6-Bm-b8t" secondAttribute="centerX" id="Jh2-AS-VO6"/>
+                            <constraint firstItem="xv1-QM-4h6" firstAttribute="centerY" secondItem="nQ6-Bm-b8t" secondAttribute="centerY" id="kHR-Jc-hal"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="iOT-Cs-3z2"/>
+                    <connections>
+                        <outlet property="logoutButton" destination="xv1-QM-4h6" id="ViH-C0-6ub"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hoS-Ne-bau" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="874" y="735"/>
         </scene>
         <!--Restaurants-->
         <scene sceneID="cGo-4w-DCb">
@@ -419,11 +468,11 @@
             </objects>
             <point key="canvasLocation" x="1832" y="-362"/>
         </scene>
-        <!--Item-->
+        <!--Restaurants-->
         <scene sceneID="YGC-8F-7cR">
             <objects>
                 <navigationController id="1AN-WE-Vgc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="bFI-ra-Nfo">
+                    <tabBarItem key="tabBarItem" title="Restaurants" id="bFI-ra-Nfo">
                         <color key="badgeColor" systemColor="systemBackgroundColor"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yQp-Y4-edt">
