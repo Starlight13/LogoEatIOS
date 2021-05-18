@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7915D94726541BA30023CF3B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915D94626541BA30023CF3B /* NetworkService.swift */; };
+		7915D94B26541DC50023CF3B /* AuthorizationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915D94A26541DC50023CF3B /* AuthorizationNetworkService.swift */; };
+		7915D94D265424200023CF3B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915D94C265424200023CF3B /* LoginViewController.swift */; };
 		795DE846265028EB00D6CE04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DE845265028EB00D6CE04 /* AppDelegate.swift */; };
 		795DE848265028EB00D6CE04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DE847265028EB00D6CE04 /* ViewController.swift */; };
 		795DE84B265028EB00D6CE04 /* Restaurant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795DE849265028EB00D6CE04 /* Restaurant.storyboard */; };
@@ -20,9 +23,13 @@
 		79A697F72651A7B5001D57E3 /* BookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A697F62651A7B5001D57E3 /* BookingModel.swift */; };
 		79A697F92651BDE1001D57E3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A697F82651BDE1001D57E3 /* DetailViewController.swift */; };
 		79A698072652B7A3001D57E3 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79A698062652B7A3001D57E3 /* Authorization.storyboard */; };
+		79A6980B2652D7B0001D57E3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6980A2652D7B0001D57E3 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7915D94626541BA30023CF3B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		7915D94A26541DC50023CF3B /* AuthorizationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationNetworkService.swift; sourceTree = "<group>"; };
+		7915D94C265424200023CF3B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		795DE842265028EB00D6CE04 /* LogoEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogoEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		795DE845265028EB00D6CE04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		795DE847265028EB00D6CE04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +45,7 @@
 		79A697F62651A7B5001D57E3 /* BookingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingModel.swift; sourceTree = "<group>"; };
 		79A697F82651BDE1001D57E3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		79A698062652B7A3001D57E3 /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
+		79A6980A2652D7B0001D57E3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7915D94526541B620023CF3B /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				7915D94626541BA30023CF3B /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		7915D94926541D800023CF3B /* AuthorizationNetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				7915D94A26541DC50023CF3B /* AuthorizationNetworkService.swift */,
+			);
+			path = AuthorizationNetworkService;
+			sourceTree = "<group>";
+		};
 		795DE839265028EB00D6CE04 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +111,7 @@
 				79A697FB2652AF42001D57E3 /* Model */,
 				79A697FC2652AF48001D57E3 /* View */,
 				79A697FD2652AF50001D57E3 /* Controller */,
+				7915D94526541B620023CF3B /* NetworkService */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -158,6 +183,7 @@
 				79A698032652B74F001D57E3 /* Model */,
 				79A698042652B755001D57E3 /* View */,
 				79A698052652B759001D57E3 /* Controller */,
+				7915D94926541D800023CF3B /* AuthorizationNetworkService */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -165,6 +191,7 @@
 		79A698032652B74F001D57E3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				79A6980A2652D7B0001D57E3 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,6 +207,7 @@
 		79A698052652B759001D57E3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7915D94C265424200023CF3B /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -256,14 +284,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7915D94726541BA30023CF3B /* NetworkService.swift in Sources */,
 				79A697F92651BDE1001D57E3 /* DetailViewController.swift in Sources */,
 				79A15A7B26513883002D2252 /* RestaurantTableViewCell.swift in Sources */,
 				795DE84E265028EB00D6CE04 /* LogoEat.xcdatamodeld in Sources */,
+				7915D94B26541DC50023CF3B /* AuthorizationNetworkService.swift in Sources */,
 				79A697F52651739A001D57E3 /* RestaurantModel.swift in Sources */,
 				795DE848265028EB00D6CE04 /* ViewController.swift in Sources */,
 				79A15A7726512341002D2252 /* RestaurantsTableViewController.swift in Sources */,
 				79A15A792651241B002D2252 /* BookingsTableViewController.swift in Sources */,
 				795DE846265028EB00D6CE04 /* AppDelegate.swift in Sources */,
+				79A6980B2652D7B0001D57E3 /* UserModel.swift in Sources */,
+				7915D94D265424200023CF3B /* LoginViewController.swift in Sources */,
 				79A697F72651A7B5001D57E3 /* BookingModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
