@@ -18,6 +18,12 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButton.addTarget(self, action: #selector(login(sender:)), for: .touchUpInside)
+        loginButton.layer.cornerRadius = 5
+        loginButton.layer.backgroundColor = UIColor(red: 0.506, green: 0.698, blue: 0.604, alpha: 1).cgColor
+        signupButton.layer.backgroundColor = UIColor(red: 0.335, green: 0.35, blue: 0.488, alpha: 1).cgColor
+        signupButton.layer.cornerRadius = 5
+        emailTextField.layer.cornerRadius = 8
+        passwordTextField.layer.cornerRadius = 8
     }
     
     @objc func login (sender: UIButton) {

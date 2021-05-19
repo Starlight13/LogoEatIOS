@@ -78,10 +78,9 @@ class BookingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: {(_,_) in
-            let cell = tableView.cellForRow(at: indexPath) as! RestaurantTableViewCell
-            cell.nameLabel.text = "DELETED"
-            cell.cuisineLabel.text = "Let's imagine it was deleted"
-            cell.locationLabel.text = "Seriously.Deleted."
+            self.bookings.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+//            tableView.deleteSections([indexPath.section], with: .automatic)
         })
         
         return [deleteAction]
