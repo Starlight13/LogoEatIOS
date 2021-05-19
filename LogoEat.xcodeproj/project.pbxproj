@@ -11,6 +11,9 @@
 		7915D94B26541DC50023CF3B /* AuthorizationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915D94A26541DC50023CF3B /* AuthorizationNetworkService.swift */; };
 		7915D94D265424200023CF3B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915D94C265424200023CF3B /* LoginViewController.swift */; };
 		7915D954265456730023CF3B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915D953265456730023CF3B /* SettingsViewController.swift */; };
+		7915D9562654EC5C0023CF3B /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7915D9552654EC5C0023CF3B /* Settings.storyboard */; };
+		7915D9582655034F0023CF3B /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915D9572655034F0023CF3B /* BookViewController.swift */; };
+		7915D95A26550CCE0023CF3B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915D95926550CCE0023CF3B /* SignupViewController.swift */; };
 		795DE846265028EB00D6CE04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DE845265028EB00D6CE04 /* AppDelegate.swift */; };
 		795DE848265028EB00D6CE04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DE847265028EB00D6CE04 /* ViewController.swift */; };
 		795DE84B265028EB00D6CE04 /* Restaurant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795DE849265028EB00D6CE04 /* Restaurant.storyboard */; };
@@ -32,6 +35,9 @@
 		7915D94A26541DC50023CF3B /* AuthorizationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationNetworkService.swift; sourceTree = "<group>"; };
 		7915D94C265424200023CF3B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7915D953265456730023CF3B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7915D9552654EC5C0023CF3B /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		7915D9572655034F0023CF3B /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
+		7915D95926550CCE0023CF3B /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		795DE842265028EB00D6CE04 /* LogoEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogoEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		795DE845265028EB00D6CE04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		795DE847265028EB00D6CE04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 		7915D950265456320023CF3B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7915D9552654EC5C0023CF3B /* Settings.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,6 +197,7 @@
 				79A697F82651BDE1001D57E3 /* DetailViewController.swift */,
 				79A15A7626512341002D2252 /* RestaurantsTableViewController.swift */,
 				79A15A782651241B002D2252 /* BookingsTableViewController.swift */,
+				7915D9572655034F0023CF3B /* BookViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -243,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				7915D94C265424200023CF3B /* LoginViewController.swift */,
+				7915D95926550CCE0023CF3B /* SignupViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -309,6 +318,7 @@
 				795DE853265028ED00D6CE04 /* LaunchScreen.storyboard in Resources */,
 				795DE850265028ED00D6CE04 /* Assets.xcassets in Resources */,
 				795DE84B265028EB00D6CE04 /* Restaurant.storyboard in Resources */,
+				7915D9562654EC5C0023CF3B /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,8 +339,10 @@
 				79A15A7726512341002D2252 /* RestaurantsTableViewController.swift in Sources */,
 				79A15A792651241B002D2252 /* BookingsTableViewController.swift in Sources */,
 				7915D954265456730023CF3B /* SettingsViewController.swift in Sources */,
+				7915D95A26550CCE0023CF3B /* SignupViewController.swift in Sources */,
 				795DE846265028EB00D6CE04 /* AppDelegate.swift in Sources */,
 				79A6980B2652D7B0001D57E3 /* UserModel.swift in Sources */,
+				7915D9582655034F0023CF3B /* BookViewController.swift in Sources */,
 				7915D94D265424200023CF3B /* LoginViewController.swift in Sources */,
 				79A697F72651A7B5001D57E3 /* BookingModel.swift in Sources */,
 			);

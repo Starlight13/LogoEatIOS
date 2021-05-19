@@ -22,7 +22,7 @@
                     <connections>
                         <segue destination="1AN-WE-Vgc" kind="relationship" relationship="viewControllers" id="nDN-ME-522"/>
                         <segue destination="nOY-lg-w2M" kind="relationship" relationship="viewControllers" id="YUe-yp-Mak"/>
-                        <segue destination="4cW-Pb-lSv" kind="relationship" relationship="viewControllers" id="szK-AD-7nO"/>
+                        <segue destination="5zi-MT-FFx" kind="relationship" relationship="viewControllers" id="BMl-jC-lhW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SNt-Id-l4p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -155,53 +155,15 @@
             </objects>
             <point key="canvasLocation" x="-26" y="21"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="WUH-RX-Sqz">
+        <!--settingsNavigationController-->
+        <scene sceneID="PJE-15-Bw5">
             <objects>
-                <navigationController id="4cW-Pb-lSv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Pgz-Pk-4ML"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eRX-3h-ciU">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="guQ-r0-GSz" kind="relationship" relationship="rootViewController" id="Dwa-VR-XAR"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NsW-rw-fST" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="settingsNavigationController" id="5zi-MT-FFx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" id="YLz-Qu-r8Y"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VDI-by-ipf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26" y="735"/>
-        </scene>
-        <!--Settings View Controller-->
-        <scene sceneID="CNA-7h-ulm">
-            <objects>
-                <viewController id="guQ-r0-GSz" customClass="SettingsViewController" customModule="LogoEat" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nQ6-Bm-b8t">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xv1-QM-4h6">
-                                <rect key="frame" x="181.5" y="433" width="51" height="30"/>
-                                <state key="normal" title="LogOut">
-                                    <color key="titleColor" red="0.2256951928" green="0.22830384970000001" blue="0.3333465457" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="DbB-Dj-AxA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="xv1-QM-4h6" firstAttribute="centerX" secondItem="nQ6-Bm-b8t" secondAttribute="centerX" id="Jh2-AS-VO6"/>
-                            <constraint firstItem="xv1-QM-4h6" firstAttribute="centerY" secondItem="nQ6-Bm-b8t" secondAttribute="centerY" id="kHR-Jc-hal"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="iOT-Cs-3z2"/>
-                    <connections>
-                        <outlet property="logoutButton" destination="xv1-QM-4h6" id="ViH-C0-6ub"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hoS-Ne-bau" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="874" y="735"/>
+            <point key="canvasLocation" x="-1200" y="111"/>
         </scene>
         <!--Restaurants-->
         <scene sceneID="cGo-4w-DCb">
@@ -396,6 +358,9 @@
                                                     <constraint firstAttribute="width" constant="150" id="wBO-tW-Kwl"/>
                                                 </constraints>
                                                 <state key="normal" title="Book"/>
+                                                <connections>
+                                                    <segue destination="3D2-u9-7h4" kind="presentation" id="ydl-km-d9C"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -466,7 +431,95 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="04V-DJ-L5k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1832" y="-362"/>
+            <point key="canvasLocation" x="1832" y="-370"/>
+        </scene>
+        <!--Book View Controller-->
+        <scene sceneID="k8p-qh-afr">
+            <objects>
+                <viewController id="3D2-u9-7h4" customClass="BookViewController" customModule="LogoEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RIU-IR-qKV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Booking date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z6b-rA-2XA">
+                                <rect key="frame" x="100" y="396" width="214" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Z6b-rA-2XA" secondAttribute="height" multiplier="107:25" id="OFE-Xc-E8g"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Booking date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iDc-g6-XDS">
+                                <rect key="frame" x="100" y="486" width="214" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iDc-g6-XDS" secondAttribute="height" multiplier="107:25" id="83p-i1-9ev"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pGZ-Lt-rgy">
+                                <rect key="frame" x="100" y="306" width="214" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="pGZ-Lt-rgy" secondAttribute="height" multiplier="107:25" id="zO2-tq-ZOj"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="continue" enablesReturnKeyAutomatically="YES" textContentType="name"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bookingPlace" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lP-zJ-hzn">
+                                <rect key="frame" x="30" y="156" width="354" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MgB-qn-1mn">
+                                <rect key="frame" x="132" y="593" width="150" height="50"/>
+                                <color key="backgroundColor" red="0.5462213159" green="0.69183468820000005" blue="0.61175662279999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1EK-qY-zPo"/>
+                                    <constraint firstAttribute="width" constant="150" id="dGH-RI-dD8"/>
+                                </constraints>
+                                <color key="tintColor" red="0.2256951928" green="0.22830384970000001" blue="0.3333465457" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Book"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eK7-zG-rQn"/>
+                        <color key="backgroundColor" red="0.33634954690000002" green="0.34492808580000001" blue="0.48629260060000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="eK7-zG-rQn" firstAttribute="trailing" secondItem="iDc-g6-XDS" secondAttribute="trailing" constant="100" id="3K5-Td-SAs"/>
+                            <constraint firstItem="eK7-zG-rQn" firstAttribute="trailing" secondItem="pGZ-Lt-rgy" secondAttribute="trailing" constant="100" id="5bm-xF-beM"/>
+                            <constraint firstItem="iDc-g6-XDS" firstAttribute="width" secondItem="iDc-g6-XDS" secondAttribute="height" multiplier="107:25" id="FQs-3g-4yQ"/>
+                            <constraint firstItem="pGZ-Lt-rgy" firstAttribute="width" secondItem="pGZ-Lt-rgy" secondAttribute="height" multiplier="107:25" id="MBu-Kg-rlz"/>
+                            <constraint firstItem="eK7-zG-rQn" firstAttribute="trailing" secondItem="Z6b-rA-2XA" secondAttribute="trailing" constant="100" id="MOT-ty-63y"/>
+                            <constraint firstItem="MgB-qn-1mn" firstAttribute="top" relation="lessThanOrEqual" secondItem="iDc-g6-XDS" secondAttribute="bottom" constant="77" id="PpV-pG-bRg"/>
+                            <constraint firstItem="pGZ-Lt-rgy" firstAttribute="centerX" secondItem="RIU-IR-qKV" secondAttribute="centerX" id="S7d-J0-abG"/>
+                            <constraint firstItem="iDc-g6-XDS" firstAttribute="leading" secondItem="eK7-zG-rQn" secondAttribute="leading" constant="100" id="Usy-FC-LGu"/>
+                            <constraint firstItem="5lP-zJ-hzn" firstAttribute="leading" secondItem="eK7-zG-rQn" secondAttribute="leading" constant="30" id="Yyb-yi-6P1"/>
+                            <constraint firstItem="eK7-zG-rQn" firstAttribute="trailing" secondItem="5lP-zJ-hzn" secondAttribute="trailing" constant="30" id="akT-in-Gxb"/>
+                            <constraint firstItem="pGZ-Lt-rgy" firstAttribute="leading" secondItem="eK7-zG-rQn" secondAttribute="leading" constant="100" id="bLb-Qc-y4L"/>
+                            <constraint firstItem="5lP-zJ-hzn" firstAttribute="centerX" secondItem="RIU-IR-qKV" secondAttribute="centerX" id="cZi-do-VkG"/>
+                            <constraint firstItem="pGZ-Lt-rgy" firstAttribute="top" secondItem="5lP-zJ-hzn" secondAttribute="bottom" constant="126" id="dj6-7Y-Pg1"/>
+                            <constraint firstItem="Z6b-rA-2XA" firstAttribute="top" secondItem="pGZ-Lt-rgy" secondAttribute="bottom" constant="40" id="gag-NG-BnP"/>
+                            <constraint firstItem="Z6b-rA-2XA" firstAttribute="leading" secondItem="eK7-zG-rQn" secondAttribute="leading" constant="100" id="gkW-oX-N3m"/>
+                            <constraint firstItem="iDc-g6-XDS" firstAttribute="top" secondItem="Z6b-rA-2XA" secondAttribute="bottom" constant="40" id="hJd-e6-jqN"/>
+                            <constraint firstItem="MgB-qn-1mn" firstAttribute="centerX" secondItem="RIU-IR-qKV" secondAttribute="centerX" id="hKk-WK-Ncf"/>
+                            <constraint firstItem="Z6b-rA-2XA" firstAttribute="centerX" secondItem="RIU-IR-qKV" secondAttribute="centerX" id="s67-ch-xrY"/>
+                            <constraint firstItem="Z6b-rA-2XA" firstAttribute="centerY" secondItem="RIU-IR-qKV" secondAttribute="centerY" id="zz7-dv-1R9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bookButton" destination="MgB-qn-1mn" id="6mJ-h6-Zs1"/>
+                        <outlet property="bookingPlaceLabel" destination="5lP-zJ-hzn" id="KXe-Tz-yHa"/>
+                        <outlet property="dateTextField" destination="Z6b-rA-2XA" id="eDZ-tz-uHY"/>
+                        <outlet property="nameTextField" destination="pGZ-Lt-rgy" id="YQk-Lu-DNs"/>
+                        <outlet property="numberOfPeopleTextField" destination="iDc-g6-XDS" id="6Rc-tX-wBM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fn0-0L-vAS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2645" y="-370"/>
         </scene>
         <!--Restaurants-->
         <scene sceneID="YGC-8F-7cR">
@@ -492,7 +545,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="I91-bI-Sxy"/>
+        <segue reference="4pm-BY-ts7"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemBackgroundColor"/>
     <resources>
