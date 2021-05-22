@@ -23,27 +23,26 @@ class BookingsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.backgroundColor = UIColor(red: 0.335, green: 0.35, blue: 0.488, alpha: 1)
         navigationController?.navigationBar.barTintColor = UIColor(red: 0.239, green: 0.251, blue: 0.357, alpha: 1)
-        let sections: NSSet = NSSet(array: sectionsInTable)
         for booking in bookings{
-            if !sections.contains(booking.date) {
-                sectionsInTable.append(booking.date)
-            }
+            sectionsInTable.append(booking.date)
         }
         self.tableView.reloadData()
     }
     
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        (view as? UITableViewHeaderFooterView)?.textLabel?.textColor = .white
+        (view as? UITableViewHeaderFooterView)?.textLabel?.font = UIFont(name: "Helvetica Neue", size: 24)
+        (view as? UITableViewHeaderFooterView)?.tintColor = .clear
+    }
     
     // MARK: - Table view data source
     func getSectionItems(section: Int) -> [Booking] {
         var sectionItems = [Booking]()
         
         // loop through the testArray to get the items for this sections's date
-        for booking in bookings {
-            if booking.date == sectionsInTable[section] {
-                sectionItems.append(booking)
-            }
-        }
+        sectionItems.append(bookings[section])
         
         return sectionItems
     }
@@ -74,13 +73,13 @@ class BookingsTableViewController: UITableViewController {
         return sectionsInTable[section]
     }
     
-    // MARK: - Table view delefate
+    // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: {(_,_) in
-            self.bookings.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-//            tableView.deleteSections([indexPath.section], with: .automatic)
+            self.bookings.remove(at: indexPath.section)
+            self.sectionsInTable.remove(at: indexPath.section)
+            tableView.deleteSections([indexPath.section], with: .automatic)
         })
         
         return [deleteAction]

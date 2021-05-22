@@ -17,6 +17,13 @@ class RestaurantTableViewCell: UITableViewCell {
     @IBOutlet var cuisineLabel: UILabel!
     @IBOutlet var locationLabel: UILabel!
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.backgroundColor = .clear
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+        contentView.backgroundColor = .white
+    }
+    
     func configure(with restaurant: Restaurant) {
         self.restaurantImage.image = UIImage(named: restaurant.image)
         self.restaurantImage.layer.cornerRadius = 10

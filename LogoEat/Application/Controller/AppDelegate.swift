@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         var initialViewController: UIViewController
-        if User.token != nil {
+        if Token.token != nil {
             let storyboard = UIStoryboard(name: "Restaurant", bundle: .main)
             initialViewController = storyboard.instantiateViewController(withIdentifier: "tabBarController")
         } else {

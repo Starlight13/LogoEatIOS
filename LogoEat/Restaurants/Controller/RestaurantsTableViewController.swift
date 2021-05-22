@@ -22,7 +22,7 @@ class RestaurantsTableViewController: UITableViewController {
     
     private var filteredRestaurants = [Restaurant]()
     private let restaurants = [
-        Restaurant(name: "Pototski", rating: 9.0, cuisine: "Ukrainian, Italian", description: "Good restaurant for good people.", location: "Khmelnystsky, Proskurivska, 45", image: "Pototski"),
+        Restaurant(name: "Pototski", rating: 9.0, cuisine: "Ukrainian, Italian", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo velit ut quam ullamcorper porttitor.", location: "Khmelnystsky, Proskurivska, 45", image: "Pototski"),
         Restaurant(name: "Shpigel", rating: 4.5, cuisine: "Israel", description: "Good restaurant for good people.", location: "Khmelnystsky", image: "Pototski"),
         Restaurant(name: "Craft", rating: 8.8, cuisine: "American, European", description: "Good restaurant for good people.",  location: "Khmelnystsky", image: "Pototski")
     ]
@@ -31,6 +31,8 @@ class RestaurantsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.backgroundColor = UIColor(red: 0.335, green: 0.35, blue: 0.488, alpha: 1)
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 0.239, green: 0.251, blue: 0.357, alpha: 1)
         tabBarController?.tabBar.barTintColor = UIColor(red: 0.239, green: 0.251, blue: 0.357, alpha: 1)

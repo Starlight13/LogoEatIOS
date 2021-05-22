@@ -57,6 +57,7 @@
                                     <constraint firstAttribute="height" constant="50" id="VQM-Rf-QVe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="20"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-1"/>
                                 <state key="normal" title="Sign up">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
@@ -154,10 +155,9 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhq-N3-tfh">
-                                <rect key="frame" x="98.5" y="668" width="217" height="50"/>
+                                <rect key="frame" x="142" y="668" width="130" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="dyt-fz-9eO"/>
-                                    <constraint firstAttribute="width" secondItem="qhq-N3-tfh" secondAttribute="height" multiplier="13:3" id="fSZ-l7-Yqe"/>
                                     <constraint firstAttribute="height" constant="50" id="rbH-3b-r5Q"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="20"/>

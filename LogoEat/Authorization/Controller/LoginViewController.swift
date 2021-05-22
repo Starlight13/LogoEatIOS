@@ -41,12 +41,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         group.enter()
         AuthorizationNetworkService.login(email: email, password: password) {(dict) in
             guard let token = dict["token"] as? String else {return}
-            User.token = token;
+            Token.token = token;
             group.leave()
         }
         
         group.notify(queue: .main){
-            if User.token != nil {
+            if Token.token != nil {
                 let storyboard = UIStoryboard(name: "Restaurant", bundle: .main)
                 let controller = storyboard.instantiateViewController(withIdentifier: "tabBarController")
                 UIView.transition(with: UIApplication.shared.keyWindow!, duration: 0.5, options: .transitionFlipFromTop,

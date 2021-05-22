@@ -27,7 +27,9 @@
 		79A697F72651A7B5001D57E3 /* BookingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A697F62651A7B5001D57E3 /* BookingModel.swift */; };
 		79A697F92651BDE1001D57E3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A697F82651BDE1001D57E3 /* DetailViewController.swift */; };
 		79A698072652B7A3001D57E3 /* Authorization.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79A698062652B7A3001D57E3 /* Authorization.storyboard */; };
-		79A6980B2652D7B0001D57E3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6980A2652D7B0001D57E3 /* UserModel.swift */; };
+		79A6980B2652D7B0001D57E3 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6980A2652D7B0001D57E3 /* TokenModel.swift */; };
+		79CF5ABA265916BC00CB4AD2 /* LikedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CF5AB9265916BC00CB4AD2 /* LikedTableViewController.swift */; };
+		79CF5ABC2659330900CB4AD2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CF5ABB2659330900CB4AD2 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +55,9 @@
 		79A697F62651A7B5001D57E3 /* BookingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingModel.swift; sourceTree = "<group>"; };
 		79A697F82651BDE1001D57E3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		79A698062652B7A3001D57E3 /* Authorization.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authorization.storyboard; sourceTree = "<group>"; };
-		79A6980A2652D7B0001D57E3 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		79A6980A2652D7B0001D57E3 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
+		79CF5AB9265916BC00CB4AD2 /* LikedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedTableViewController.swift; sourceTree = "<group>"; };
+		79CF5ABB2659330900CB4AD2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				7915D953265456730023CF3B /* SettingsViewController.swift */,
+				79CF5AB9265916BC00CB4AD2 /* LikedTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -112,6 +117,7 @@
 		7915D951265456390023CF3B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				79CF5ABB2659330900CB4AD2 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,7 +240,7 @@
 		79A698032652B74F001D57E3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				79A6980A2652D7B0001D57E3 /* UserModel.swift */,
+				79A6980A2652D7B0001D57E3 /* TokenModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -341,10 +347,12 @@
 				7915D954265456730023CF3B /* SettingsViewController.swift in Sources */,
 				7915D95A26550CCE0023CF3B /* SignupViewController.swift in Sources */,
 				795DE846265028EB00D6CE04 /* AppDelegate.swift in Sources */,
-				79A6980B2652D7B0001D57E3 /* UserModel.swift in Sources */,
+				79A6980B2652D7B0001D57E3 /* TokenModel.swift in Sources */,
 				7915D9582655034F0023CF3B /* BookViewController.swift in Sources */,
 				7915D94D265424200023CF3B /* LoginViewController.swift in Sources */,
 				79A697F72651A7B5001D57E3 /* BookingModel.swift in Sources */,
+				79CF5ABC2659330900CB4AD2 /* UserModel.swift in Sources */,
+				79CF5ABA265916BC00CB4AD2 /* LikedTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

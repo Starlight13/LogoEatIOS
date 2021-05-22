@@ -9,33 +9,26 @@
 import UIKit
 import MapKit
 
-class DetailViewController: UIViewController{
+class DetailViewController: UITableViewController{
     
     var currentRestaurant: Restaurant?
     
     
     @IBOutlet var restaurantImage: UIImageView!
     @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var ratingLabel: UILabel!
     @IBOutlet var cuisineLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var restaurantMapView: MKMapView!
-    @IBOutlet var likeButton: UIButton!
     @IBOutlet var bookButton: UIButton!
-    @IBOutlet var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(scrollView)
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 44
         setupDetailScreen()
         setupPlacemark()
-    }
-    
-    override func viewWillLayoutSubviews(){
-    super.viewWillLayoutSubviews()
-    scrollView.contentSize = CGSize(width: 414, height: 920)
-        scrollView.frame.size = CGSize(width: 400, height: 900)
-
     }
     
     private func setupDetailScreen() {
@@ -46,6 +39,19 @@ class DetailViewController: UIViewController{
             guard let imageName = currentRestaurant?.image else {return}
             restaurantImage.image = UIImage(named: imageName)
             nameLabel.text = currentRestaurant?.name
+            
+            ratingLabel.text = String(currentRestaurant!.rating)
+            switch currentRestaurant!.rating {
+            case 0..<5:
+                self.ratingLabel.backgroundColor = UIColor(red: 0.878, green: 0.478, blue: 0.373, alpha: 1)
+            default:
+                self.ratingLabel.backgroundColor = UIColor(red: 0.239, green: 0.251, blue: 0.357, alpha: 1)
+            }
+            self.ratingLabel.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+            self.ratingLabel.layer.cornerRadius = 3
+            self.ratingLabel.layer.masksToBounds = true
+            
+            
             cuisineLabel.text = currentRestaurant?.cuisine
             descriptionLabel.text = currentRestaurant?.description
             locationLabel.text = currentRestaurant?.location

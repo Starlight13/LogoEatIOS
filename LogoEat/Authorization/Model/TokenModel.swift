@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class User {
+final class Token {
     private enum SettingsKeys: String{
         case token
     }
