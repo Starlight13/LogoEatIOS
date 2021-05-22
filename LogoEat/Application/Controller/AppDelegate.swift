@@ -16,17 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        var initialViewController: UIViewController
-        if Token.token != nil {
-            let storyboard = UIStoryboard(name: "Restaurant", bundle: .main)
-            initialViewController = storyboard.instantiateViewController(withIdentifier: "tabBarController")
-        } else {
-            let storyboard = UIStoryboard(name: "Authorization", bundle: .main)
-            initialViewController = storyboard.instantiateViewController(withIdentifier: "loginViewController")
-        }
-
-            self.window?.rootViewController = initialViewController
-            self.window?.makeKeyAndVisible()
+//        var initialViewController: UIViewController
+//        if Token.token != nil {
+//            let storyboard = UIStoryboard(name: "Restaurant", bundle: .main)
+//            initialViewController = storyboard.instantiateViewController(withIdentifier: "tabBarController")
+//        } else {
+//            let storyboard = UIStoryboard(name: "Authorization", bundle: .main)
+//            initialViewController = storyboard.instantiateViewController(withIdentifier: "loginViewController")
+//        }
+//        initialViewController = storyboard.instantiateViewController(withIdentifier: "tabBarController"
+//            self.window?.rootViewController = initialViewController
+//            self.window?.makeKeyAndVisible()
         return true
     }
 

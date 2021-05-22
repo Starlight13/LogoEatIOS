@@ -43,7 +43,7 @@ class SettingsViewController: UITableViewController {
         if !(Token.token == nil) {return}
         let storyboard = UIStoryboard(name: "Authorization", bundle: .main)
 
-        UIView.transition(with: UIApplication.shared.keyWindow!, duration: 0.5, options: .transitionFlipFromTop, animations: {
+        UIView.transition(with: UIApplication.shared.keyWindow!, duration: 0.5, options: .transitionFlipFromLeft, animations: {
             UIApplication.shared.keyWindow!.rootViewController = storyboard.instantiateViewController(withIdentifier: "loginViewController")
             })
     }
@@ -53,8 +53,20 @@ class SettingsViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let newDetailVC = segue.destination as! LikedTableViewController
-        newDetailVC.likedRestaurants = user.likedRestaurants
+        if segue.identifier == "likedSegue" {
+            let newDetailVC = segue.destination as! LikedTableViewController
+            newDetailVC.likedRestaurants = user.likedRestaurants
+        } else {
+            let newChangeVC = segue.destination as! ChangeViewController
+            switch segue.identifier {
+            case "nameSegue":
+                newChangeVC.changeType = ChangeType.name
+            case "phoneSegue":
+                newChangeVC.changeType = ChangeType.phone
+            default:
+                newChangeVC.changeType = ChangeType.password
+            }
+        }
     }
 
 

@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -76,7 +77,7 @@
                                                         <color key="titleColor" systemColor="labelColor"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="7eI-rz-ZJx" kind="show" id="B4r-DC-ecr"/>
+                                                        <segue destination="7eI-rz-ZJx" kind="show" identifier="likedSegue" id="B4r-DC-ecr"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -101,6 +102,9 @@
                                                     <state key="normal" title="Change name">
                                                         <color key="titleColor" systemColor="labelColor"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="uXl-vK-tgE" kind="presentation" identifier="nameSegue" modalPresentationStyle="automatic" modalTransitionStyle="flipHorizontal" id="yqB-Gc-fLK"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -124,6 +128,9 @@
                                                     <state key="normal" title="Change phone number">
                                                         <color key="titleColor" systemColor="labelColor"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="uXl-vK-tgE" kind="presentation" identifier="phoneSegue" modalTransitionStyle="flipHorizontal" id="9PV-Qe-8M1"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -147,6 +154,9 @@
                                                     <state key="normal" title="Change password">
                                                         <color key="titleColor" systemColor="labelColor"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="uXl-vK-tgE" kind="presentation" identifier="passwordSegue" modalTransitionStyle="flipHorizontal" id="e49-tU-sNN"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -203,6 +213,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2xc-QY-VhX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="291" y="690"/>
+        </scene>
+        <!--Change View Controller-->
+        <scene sceneID="IMu-mL-NQx">
+            <objects>
+                <viewController id="uXl-vK-tgE" customClass="ChangeViewController" customModule="LogoEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yCe-2g-CYe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnV-oE-gij">
+                                <rect key="frame" x="87" y="295.5" width="240" height="251"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change smth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eF-AT-JmA">
+                                        <rect key="frame" x="2" y="49" width="236" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter new something" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tTb-wV-blc">
+                                        <rect key="frame" x="37.5" y="108" width="165" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgq-h7-hrg">
+                                        <rect key="frame" x="37.5" y="182" width="165" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="165" id="bY3-jL-90y"/>
+                                        </constraints>
+                                        <state key="normal" title="Confirm"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="8eF-AT-JmA" firstAttribute="leading" secondItem="NnV-oE-gij" secondAttribute="leading" constant="2" id="JeK-EX-Kkx"/>
+                                    <constraint firstItem="8eF-AT-JmA" firstAttribute="top" secondItem="NnV-oE-gij" secondAttribute="top" constant="49" id="O4E-ee-P9S"/>
+                                    <constraint firstItem="dgq-h7-hrg" firstAttribute="top" secondItem="tTb-wV-blc" secondAttribute="bottom" constant="40" id="Op7-hV-mK6"/>
+                                    <constraint firstAttribute="width" constant="240" id="Umm-HZ-JhC"/>
+                                    <constraint firstAttribute="height" constant="251" id="c4X-pJ-NvD"/>
+                                    <constraint firstItem="dgq-h7-hrg" firstAttribute="centerX" secondItem="NnV-oE-gij" secondAttribute="centerX" id="cIF-sW-WWs"/>
+                                    <constraint firstAttribute="trailing" secondItem="8eF-AT-JmA" secondAttribute="trailing" constant="2" id="dLT-bZ-iBg"/>
+                                    <constraint firstItem="tTb-wV-blc" firstAttribute="centerX" secondItem="NnV-oE-gij" secondAttribute="centerX" id="pNA-pW-2yn"/>
+                                    <constraint firstItem="tTb-wV-blc" firstAttribute="top" secondItem="8eF-AT-JmA" secondAttribute="bottom" constant="38" id="qgI-J2-ajS"/>
+                                    <constraint firstItem="8eF-AT-JmA" firstAttribute="centerX" secondItem="NnV-oE-gij" secondAttribute="centerX" id="zs4-TG-vAk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Qku-6y-YsC"/>
+                        <constraints>
+                            <constraint firstItem="NnV-oE-gij" firstAttribute="centerX" secondItem="yCe-2g-CYe" secondAttribute="centerX" id="141-PB-SRX"/>
+                            <constraint firstItem="NnV-oE-gij" firstAttribute="centerY" secondItem="yCe-2g-CYe" secondAttribute="centerY" id="W5j-4C-Exy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="changeButton" destination="dgq-h7-hrg" id="F0q-3u-dGx"/>
+                        <outlet property="changeField" destination="tTb-wV-blc" id="sGi-Lj-biH"/>
+                        <outlet property="changeLabel" destination="8eF-AT-JmA" id="cO8-bZ-y3q"/>
+                        <outlet property="changeView" destination="NnV-oE-gij" id="Jl2-uJ-04x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="89I-rJ-nXF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="289.85507246376812" y="1429.6875"/>
         </scene>
         <!--Settings-->
         <scene sceneID="aVF-Us-wQm">
@@ -336,6 +408,9 @@
             <point key="canvasLocation" x="1820" y="688"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="e49-tU-sNN"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="mapMarker" width="1800" height="1780.800048828125"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
