@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class DetailViewController: UITableViewController{
+class DetailViewController: UITableViewController, UIGestureRecognizerDelegate{
     
     var currentRestaurant: Restaurant?
     
@@ -27,9 +27,17 @@ class DetailViewController: UITableViewController{
         super.viewDidLoad()
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 44
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(handleTap(gestureRecognizer:)))
+            gestureRecognizer.delegate = self
+            restaurantMapView.addGestureRecognizer(gestureRecognizer)
         setupDetailScreen()
         setupPlacemark()
     }
+    
+    @objc func handleTap(gestureRecognizer: UIGestureRecognizer) {
+        performSegue(withIdentifier: "mapSegue", sender: self)
+    }
+//    
     
     private func setupDetailScreen() {
         if let topItem = navigationController?.navigationBar.topItem{
@@ -57,6 +65,7 @@ class DetailViewController: UITableViewController{
             locationLabel.text = currentRestaurant?.location
         }
     }
+    
     
     func setupPlacemark(){
         guard let location = currentRestaurant?.location else {
@@ -92,8 +101,13 @@ class DetailViewController: UITableViewController{
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "bookSegue"{
         let newDetailVC = segue.destination as! BookViewController
         newDetailVC.currentRestaurant = currentRestaurant
+        } else {
+            let newMapVC = segue.destination as! MapViewController
+            newMapVC.currentRestaurant = currentRestaurant
+        }
     }
 
 

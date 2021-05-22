@@ -238,10 +238,13 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgq-h7-hrg">
                                         <rect key="frame" x="37.5" y="182" width="165" height="30"/>
+                                        <color key="backgroundColor" red="0.5462213159" green="0.69183468820000005" blue="0.61175662279999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="165" id="bY3-jL-90y"/>
                                         </constraints>
-                                        <state key="normal" title="Confirm"/>
+                                        <state key="normal" title="Confirm">
+                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -283,6 +286,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iD3-CV-hKu">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                        <color key="barTintColor" red="0.2256951928" green="0.22830384970000001" blue="0.3333465457" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" systemColor="systemBackgroundColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="qej-qL-dXh" kind="relationship" relationship="rootViewController" id="pS0-rx-6AQ"/>

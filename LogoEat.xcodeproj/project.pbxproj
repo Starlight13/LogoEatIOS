@@ -32,6 +32,7 @@
 		79CF5ABC2659330900CB4AD2 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CF5ABB2659330900CB4AD2 /* UserModel.swift */; };
 		79CF5ABE265966E700CB4AD2 /* ChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CF5ABD265966E700CB4AD2 /* ChangeViewController.swift */; };
 		79CF5AC02659673200CB4AD2 /* ChangeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CF5ABF2659673200CB4AD2 /* ChangeType.swift */; };
+		79CF5AC226598C2700CB4AD2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CF5AC126598C2700CB4AD2 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		79CF5ABB2659330900CB4AD2 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		79CF5ABD265966E700CB4AD2 /* ChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeViewController.swift; sourceTree = "<group>"; };
 		79CF5ABF2659673200CB4AD2 /* ChangeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeType.swift; sourceTree = "<group>"; };
+		79CF5AC126598C2700CB4AD2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 				79A15A7626512341002D2252 /* RestaurantsTableViewController.swift */,
 				79A15A782651241B002D2252 /* BookingsTableViewController.swift */,
 				7915D9572655034F0023CF3B /* BookViewController.swift */,
+				79CF5AC126598C2700CB4AD2 /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				79A15A792651241B002D2252 /* BookingsTableViewController.swift in Sources */,
 				7915D954265456730023CF3B /* SettingsViewController.swift in Sources */,
 				7915D95A26550CCE0023CF3B /* SignupViewController.swift in Sources */,
+				79CF5AC226598C2700CB4AD2 /* MapViewController.swift in Sources */,
 				795DE846265028EB00D6CE04 /* AppDelegate.swift in Sources */,
 				79A6980B2652D7B0001D57E3 /* TokenModel.swift in Sources */,
 				7915D9582655034F0023CF3B /* BookViewController.swift in Sources */,

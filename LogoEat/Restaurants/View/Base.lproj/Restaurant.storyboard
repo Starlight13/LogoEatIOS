@@ -429,7 +429,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="210"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rzz-hl-yKg">
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rzz-hl-yKg">
                                                     <rect key="frame" x="20" y="11" width="374" height="188"/>
                                                 </mapView>
                                             </subviews>
@@ -440,6 +440,9 @@
                                                 <constraint firstItem="rzz-hl-yKg" firstAttribute="trailing" secondItem="Hpt-AK-m3L" secondAttribute="trailingMargin" id="wU2-vg-x4w"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="uGs-TK-VVE" kind="show" identifier="mapSegue" id="rS4-eF-MCW"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="xri-rI-OYS">
                                         <rect key="frame" x="0.0" y="668.5" width="414" height="70"/>
@@ -458,7 +461,7 @@
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
                                                     <state key="normal" title="Book"/>
                                                     <connections>
-                                                        <segue destination="3D2-u9-7h4" kind="showDetail" id="L0v-5M-yvl"/>
+                                                        <segue destination="3D2-u9-7h4" kind="showDetail" identifier="bookSegue" id="L0v-5M-yvl"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -492,6 +495,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghw-1h-o8j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1814" y="-370"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="sHL-bg-8CH">
+            <objects>
+                <viewController id="uGs-TK-VVE" customClass="MapViewController" customModule="LogoEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sHM-Ft-WyQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="g9X-Gk-9mo">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Gjf-aP-5RY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Zr-4p-XvL">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="1WK-zU-ygO"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="g9X-Gk-9mo" id="hzW-zW-gPm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vEs-nq-pra" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2782.608695652174" y="-723.21428571428567"/>
         </scene>
         <!--Book View Controller-->
         <scene sceneID="k8p-qh-afr">
@@ -578,7 +608,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fn0-0L-vAS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2786" y="-370"/>
+            <point key="canvasLocation" x="2784" y="-38"/>
         </scene>
         <!--Restaurants-->
         <scene sceneID="YGC-8F-7cR">
