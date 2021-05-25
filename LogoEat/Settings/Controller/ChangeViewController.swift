@@ -16,17 +16,82 @@ class ChangeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var changeLabel: UILabel!
     @IBOutlet var changeField: UITextField!
     @IBOutlet var changeButton: UIButton!
+    @IBOutlet var validationError: UILabel!
+    
+    let nameRegex = "^[a-z а-я A-Z А-Я,.'-]{3,}$"
+    let phoneRegex = "^[0-9]{10}$|^+380[0-9]{9}$"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         changeButton.addTarget(self, action: #selector(makeChange), for: .touchUpInside)
+        changeField.delegate = self
         setupChangeScreen()
+    }
+    
+   
+    //MARK: - Logic
+    
+    func validate(textField: UITextField, regex: String, errorLabel: UILabel) -> Bool {
+        if textField.text!.matches(regex) {
+            errorLabel.isHidden = true
+        } else {
+            errorLabel.isHidden = false
+            return false
+        }
+        return true
+    }
+    
+    func validateTextField() -> Bool{
+        if changeField.text != nil{
+            switch changeType {
+            case .name:
+                if !validate(textField: changeField, regex: nameRegex, errorLabel: validationError) {
+                    validationError.text = "Enter valid name"
+                    return false
+                } else {return true}
+            case .phone:
+                if !validate(textField: changeField, regex: phoneRegex, errorLabel: validationError) {
+                    validationError.text = "Enter valid phone number"
+                    return false
+                } else {return true}
+            case .password:
+                if changeField.text!.count < 6 {
+                    validationError.text = "The password is too short"
+                    validationError.isHidden = false
+                    return false
+                } else {
+                    validationError.isHidden = true
+                    return true
+                }
+            default:
+                return false
+            }
+        }
+        return false
+    }
+    
+    func shake(errorLabel: UILabel) {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.07
+        animation.repeatCount = 4
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: errorLabel.center.x - 10, y: errorLabel.center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: errorLabel.center.x + 10, y: errorLabel.center.y))
+
+        errorLabel.layer.add(animation, forKey: "position")
     }
     
     // TODO: - Pass change to server
     @objc func makeChange() {
-        self.dismiss(animated: true, completion: nil)
+        if validateTextField() {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            shake(errorLabel: validationError)
+        }
+        
     }
+    
+    //MARK: -Setup
     
     func setupChangeScreen() {
         guard changeType != nil else {return}

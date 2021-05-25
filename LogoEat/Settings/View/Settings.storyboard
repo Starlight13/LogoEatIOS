@@ -42,7 +42,7 @@
                                                     <color key="textColor" systemColor="systemBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5j-be-Vhf">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="a5j-be-Vhf">
                                                     <rect key="frame" x="170" y="109" width="219" height="18"/>
                                                     <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="18"/>
                                                     <color key="textColor" systemColor="systemBackgroundColor"/>
@@ -246,6 +246,12 @@
                                             <color key="titleColor" systemColor="systemBackgroundColor"/>
                                         </state>
                                     </button>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter smth valid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sn3-B6-LvO">
+                                        <rect key="frame" x="37.5" y="142" width="123" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.83555814719999999" green="0.50561495440000004" blue="0.47103464610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -253,9 +259,11 @@
                                     <constraint firstItem="8eF-AT-JmA" firstAttribute="top" secondItem="NnV-oE-gij" secondAttribute="top" constant="49" id="O4E-ee-P9S"/>
                                     <constraint firstItem="dgq-h7-hrg" firstAttribute="top" secondItem="tTb-wV-blc" secondAttribute="bottom" constant="40" id="Op7-hV-mK6"/>
                                     <constraint firstAttribute="width" constant="240" id="Umm-HZ-JhC"/>
+                                    <constraint firstItem="Sn3-B6-LvO" firstAttribute="top" secondItem="tTb-wV-blc" secondAttribute="bottom" id="WJ3-oQ-KFu"/>
                                     <constraint firstAttribute="height" constant="251" id="c4X-pJ-NvD"/>
                                     <constraint firstItem="dgq-h7-hrg" firstAttribute="centerX" secondItem="NnV-oE-gij" secondAttribute="centerX" id="cIF-sW-WWs"/>
                                     <constraint firstAttribute="trailing" secondItem="8eF-AT-JmA" secondAttribute="trailing" constant="2" id="dLT-bZ-iBg"/>
+                                    <constraint firstItem="Sn3-B6-LvO" firstAttribute="leading" secondItem="tTb-wV-blc" secondAttribute="leading" id="dSN-YE-jS2"/>
                                     <constraint firstItem="tTb-wV-blc" firstAttribute="centerX" secondItem="NnV-oE-gij" secondAttribute="centerX" id="pNA-pW-2yn"/>
                                     <constraint firstItem="tTb-wV-blc" firstAttribute="top" secondItem="8eF-AT-JmA" secondAttribute="bottom" constant="38" id="qgI-J2-ajS"/>
                                     <constraint firstItem="8eF-AT-JmA" firstAttribute="centerX" secondItem="NnV-oE-gij" secondAttribute="centerX" id="zs4-TG-vAk"/>
@@ -273,6 +281,7 @@
                         <outlet property="changeField" destination="tTb-wV-blc" id="sGi-Lj-biH"/>
                         <outlet property="changeLabel" destination="8eF-AT-JmA" id="cO8-bZ-y3q"/>
                         <outlet property="changeView" destination="NnV-oE-gij" id="Jl2-uJ-04x"/>
+                        <outlet property="validationError" destination="Sn3-B6-LvO" id="sas-5P-lSs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89I-rJ-nXF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
