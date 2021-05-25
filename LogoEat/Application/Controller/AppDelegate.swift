@@ -27,6 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        initialViewController = storyboard.instantiateViewController(withIdentifier: "tabBarController"
 //            self.window?.rootViewController = initialViewController
 //            self.window?.makeKeyAndVisible()
+        if window?.rootViewController as? UITabBarController != nil {
+                let tabBarController = window!.rootViewController as! UITabBarController
+                tabBarController.selectedIndex = 1
+            }
         return true
     }
 

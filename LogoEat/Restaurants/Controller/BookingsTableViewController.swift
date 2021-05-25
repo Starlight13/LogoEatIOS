@@ -25,6 +25,8 @@ class BookingsTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.backgroundColor = UIColor(red: 0.335, green: 0.35, blue: 0.488, alpha: 1)
         navigationController?.navigationBar.barTintColor = UIColor(red: 0.239, green: 0.251, blue: 0.357, alpha: 1)
+        tabBarController?.tabBar.barTintColor = UIColor(red: 0.239, green: 0.251, blue: 0.357, alpha: 1)
+        
         for booking in bookings{
             sectionsInTable.append(booking.date)
         }

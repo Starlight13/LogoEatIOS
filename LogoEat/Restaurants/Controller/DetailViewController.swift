@@ -22,22 +22,39 @@ class DetailViewController: UITableViewController, UIGestureRecognizerDelegate{
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var restaurantMapView: MKMapView!
     @IBOutlet var bookButton: UIButton!
+    @IBOutlet var likeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 44
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(handleTap(gestureRecognizer:)))
-            gestureRecognizer.delegate = self
-            restaurantMapView.addGestureRecognizer(gestureRecognizer)
+        likeButton.addTarget(self, action: #selector(like), for: .touchUpInside)
+        setupGestureRecognizer()
         setupDetailScreen()
         setupPlacemark()
+    }
+    
+    
+    
+    // MARK: - Logic
+    @objc func like() {
+        if #available(iOS 13.0, *) {
+            likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        } else {}
     }
     
     @objc func handleTap(gestureRecognizer: UIGestureRecognizer) {
         performSegue(withIdentifier: "mapSegue", sender: self)
     }
-//    
+    
+    
+//    MARK: - Setup
+    
+    func setupGestureRecognizer()  {
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action:#selector(handleTap(gestureRecognizer:)))
+            gestureRecognizer.delegate = self
+            restaurantMapView.addGestureRecognizer(gestureRecognizer)
+    }
     
     private func setupDetailScreen() {
         if let topItem = navigationController?.navigationBar.topItem{

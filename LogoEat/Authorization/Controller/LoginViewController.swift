@@ -8,12 +8,15 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController {
     
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var signupButton: UIButton!
+    @IBOutlet var emailError: UILabel!
+    
+    let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,28 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
+    }
+    
+    //MARK: - Logic
+    
+    func validate() -> Bool{
+        if emailTextField.text != nil{
+            if emailTextField.text!.matches(emailRegex) {
+                emailError.isHidden = true
+            } else {
+                emailError.isHidden = false
+                let animation = CABasicAnimation(keyPath: "position")
+                animation.duration = 0.07
+                animation.repeatCount = 4
+                animation.autoreverses = true
+                animation.fromValue = NSValue(cgPoint: CGPoint(x: emailError.center.x - 10, y: emailError.center.y))
+                animation.toValue = NSValue(cgPoint: CGPoint(x: emailError.center.x + 10, y: emailError.center.y))
+
+                emailError.layer.add(animation, forKey: "position")
+                return false
+            }
+        }
+        return false
     }
     
     func touchupLoginScreen() {
@@ -36,36 +61,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @objc func login (sender: UIButton) {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else {return}
-        
-        let group = DispatchGroup()
-        group.enter()
-        AuthorizationNetworkService.login(email: email, password: password) {(dict) in
-            guard let token = dict["token"] as? String else {return}
-            Token.token = token;
-            group.leave()
-        }
-        
-        group.notify(queue: .main){
-            if Token.token != nil {
-                let storyboard = UIStoryboard(name: "Restaurant", bundle: .main)
-                let controller = storyboard.instantiateViewController(withIdentifier: "tabBarController")
-                UIView.transition(with: UIApplication.shared.keyWindow!, duration: 0.5, options: .transitionFlipFromTop,
-                                  animations: {
-                                    UIApplication.shared.keyWindow!.rootViewController = controller
-                                  })
+        if validate(){
+            let group = DispatchGroup()
+            group.enter()
+            AuthorizationNetworkService.login(email: email, password: password) {(dict) in
+                guard let token = dict["token"] as? String else {return}
+                Token.token = token;
+                group.leave()
+            }
+            
+            group.notify(queue: .main){
+                if Token.token != nil {
+                    let storyboard = UIStoryboard(name: "Restaurant", bundle: .main)
+                    let controller = storyboard.instantiateViewController(withIdentifier: "tabBarController")
+                    UIView.transition(with: UIApplication.shared.keyWindow!, duration: 0.5, options: .transitionFlipFromTop,
+                                      animations: {
+                                        UIApplication.shared.keyWindow!.rootViewController = controller
+                                      })
+                }
+                
             }
         }
         
         
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
-    }
-    
-    
-    
     
     /*
      // MARK: - Navigation
@@ -76,5 +95,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
      // Pass the selected object to the new view controller.
      }
      */
+    
+}
+
+// MARK: - Extension
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return false
+    }
     
 }

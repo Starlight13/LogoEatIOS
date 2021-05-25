@@ -270,10 +270,10 @@
             </objects>
             <point key="canvasLocation" x="873.91304347826099" y="-706.47321428571422"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Detail-->
         <scene sceneID="Mx5-Vd-2Zv">
             <objects>
-                <tableViewController storyboardIdentifier="detailScreen" id="uK1-Bo-N7B" customClass="DetailViewController" customModule="LogoEat" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="detailScreen" title="Detail" id="uK1-Bo-N7B" customClass="DetailViewController" customModule="LogoEat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sNM-ng-Mac">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="950"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -452,7 +452,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFJ-Xx-DMe">
-                                                    <rect key="frame" x="132" y="10" width="150" height="50"/>
+                                                    <rect key="frame" x="232" y="10" width="150" height="50"/>
                                                     <color key="backgroundColor" red="0.5462213159" green="0.69183468820000005" blue="0.61175662279999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="EMf-in-eqB"/>
@@ -464,10 +464,21 @@
                                                         <segue destination="3D2-u9-7h4" kind="showDetail" identifier="bookSegue" id="L0v-5M-yvl"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIk-DW-G8x">
+                                                    <rect key="frame" x="32" y="10" width="150" height="50"/>
+                                                    <color key="backgroundColor" red="0.83555814719999999" green="0.50561495440000004" blue="0.47103464610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="bTZ-yV-5Ec"/>
+                                                        <constraint firstAttribute="height" constant="50" id="jng-5s-74u"/>
+                                                    </constraints>
+                                                    <state key="normal" image="heart" catalog="system"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="jFJ-Xx-DMe" firstAttribute="centerY" secondItem="cRy-P2-rsQ" secondAttribute="centerY" id="A98-qR-VuJ"/>
-                                                <constraint firstItem="jFJ-Xx-DMe" firstAttribute="centerX" secondItem="cRy-P2-rsQ" secondAttribute="centerX" id="Uod-Ys-Hxs"/>
+                                                <constraint firstItem="uIk-DW-G8x" firstAttribute="centerX" secondItem="cRy-P2-rsQ" secondAttribute="centerX" constant="-100" id="JK7-Bq-HTL"/>
+                                                <constraint firstItem="jFJ-Xx-DMe" firstAttribute="centerX" secondItem="cRy-P2-rsQ" secondAttribute="centerX" constant="100" id="Uod-Ys-Hxs"/>
+                                                <constraint firstItem="uIk-DW-G8x" firstAttribute="centerY" secondItem="cRy-P2-rsQ" secondAttribute="centerY" id="hPo-xt-5vc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -479,12 +490,13 @@
                             <outlet property="delegate" destination="uK1-Bo-N7B" id="Yhd-53-xWD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="0nc-8v-KOc"/>
+                    <navigationItem key="navigationItem" id="0nc-8v-KOc"/>
                     <size key="freeformSize" width="414" height="950"/>
                     <connections>
                         <outlet property="bookButton" destination="jFJ-Xx-DMe" id="IrP-6O-yUg"/>
                         <outlet property="cuisineLabel" destination="tcd-zc-QS7" id="yJh-1i-nbw"/>
                         <outlet property="descriptionLabel" destination="URL-QD-PGi" id="g6A-C2-VeM"/>
+                        <outlet property="likeButton" destination="uIk-DW-G8x" id="DmA-YL-jVf"/>
                         <outlet property="locationLabel" destination="zy8-ME-8Dk" id="0z7-RU-otP"/>
                         <outlet property="nameLabel" destination="eDq-Jt-r35" id="Pno-Ug-yd9"/>
                         <outlet property="ratingLabel" destination="xp3-n0-eZq" id="ZdB-az-mJV"/>
@@ -574,6 +586,27 @@
                                 <color key="tintColor" red="0.2256951928" green="0.22830384970000001" blue="0.3333465457" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Book"/>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter valid name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rb3-46-hIw">
+                                <rect key="frame" x="100" y="356" width="126" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.83555814719999999" green="0.50561495440000004" blue="0.47103464610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter valid date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofI-Tq-GQg">
+                                <rect key="frame" x="100" y="446" width="118" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.83555814719999999" green="0.50561495440000004" blue="0.47103464610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of people should be from 1 to 15" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mST-0Q-aqi">
+                                <rect key="frame" x="100" y="536" width="214" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="214" id="zAU-7M-c6h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.83555814719999999" green="0.50561495440000004" blue="0.47103464610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eK7-zG-rQn"/>
                         <color key="backgroundColor" red="0.33634954690000002" green="0.34492808580000001" blue="0.48629260060000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -581,9 +614,13 @@
                             <constraint firstItem="eK7-zG-rQn" firstAttribute="trailing" secondItem="iDc-g6-XDS" secondAttribute="trailing" constant="100" id="3K5-Td-SAs"/>
                             <constraint firstItem="eK7-zG-rQn" firstAttribute="trailing" secondItem="pGZ-Lt-rgy" secondAttribute="trailing" constant="100" id="5bm-xF-beM"/>
                             <constraint firstItem="iDc-g6-XDS" firstAttribute="width" secondItem="iDc-g6-XDS" secondAttribute="height" multiplier="107:25" id="FQs-3g-4yQ"/>
+                            <constraint firstItem="Rb3-46-hIw" firstAttribute="leading" secondItem="pGZ-Lt-rgy" secondAttribute="leading" id="GgM-Tm-U6d"/>
+                            <constraint firstItem="Rb3-46-hIw" firstAttribute="top" secondItem="pGZ-Lt-rgy" secondAttribute="bottom" id="JjE-O9-Zjg"/>
                             <constraint firstItem="pGZ-Lt-rgy" firstAttribute="width" secondItem="pGZ-Lt-rgy" secondAttribute="height" multiplier="107:25" id="MBu-Kg-rlz"/>
                             <constraint firstItem="eK7-zG-rQn" firstAttribute="trailing" secondItem="Z6b-rA-2XA" secondAttribute="trailing" constant="100" id="MOT-ty-63y"/>
                             <constraint firstItem="MgB-qn-1mn" firstAttribute="top" relation="lessThanOrEqual" secondItem="iDc-g6-XDS" secondAttribute="bottom" constant="77" id="PpV-pG-bRg"/>
+                            <constraint firstItem="mST-0Q-aqi" firstAttribute="leading" secondItem="iDc-g6-XDS" secondAttribute="leading" id="QIN-XS-74G"/>
+                            <constraint firstItem="ofI-Tq-GQg" firstAttribute="leading" secondItem="Z6b-rA-2XA" secondAttribute="leading" id="QoI-6r-ydc"/>
                             <constraint firstItem="pGZ-Lt-rgy" firstAttribute="centerX" secondItem="RIU-IR-qKV" secondAttribute="centerX" id="S7d-J0-abG"/>
                             <constraint firstItem="iDc-g6-XDS" firstAttribute="leading" secondItem="eK7-zG-rQn" secondAttribute="leading" constant="100" id="Usy-FC-LGu"/>
                             <constraint firstItem="5lP-zJ-hzn" firstAttribute="leading" secondItem="eK7-zG-rQn" secondAttribute="leading" constant="30" id="Yyb-yi-6P1"/>
@@ -594,21 +631,26 @@
                             <constraint firstItem="Z6b-rA-2XA" firstAttribute="leading" secondItem="eK7-zG-rQn" secondAttribute="leading" constant="100" id="gkW-oX-N3m"/>
                             <constraint firstItem="iDc-g6-XDS" firstAttribute="top" secondItem="Z6b-rA-2XA" secondAttribute="bottom" constant="40" id="hJd-e6-jqN"/>
                             <constraint firstItem="MgB-qn-1mn" firstAttribute="centerX" secondItem="RIU-IR-qKV" secondAttribute="centerX" id="hKk-WK-Ncf"/>
+                            <constraint firstItem="ofI-Tq-GQg" firstAttribute="top" secondItem="Z6b-rA-2XA" secondAttribute="bottom" id="lLc-yE-dVe"/>
                             <constraint firstItem="Z6b-rA-2XA" firstAttribute="centerX" secondItem="RIU-IR-qKV" secondAttribute="centerX" id="s67-ch-xrY"/>
+                            <constraint firstItem="mST-0Q-aqi" firstAttribute="top" secondItem="iDc-g6-XDS" secondAttribute="bottom" id="t4h-Ok-kjj"/>
                             <constraint firstItem="Z6b-rA-2XA" firstAttribute="centerY" secondItem="RIU-IR-qKV" secondAttribute="centerY" id="zz7-dv-1R9"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bookButton" destination="MgB-qn-1mn" id="6mJ-h6-Zs1"/>
                         <outlet property="bookingPlaceLabel" destination="5lP-zJ-hzn" id="KXe-Tz-yHa"/>
+                        <outlet property="dateError" destination="ofI-Tq-GQg" id="cui-HN-hTh"/>
                         <outlet property="dateTextField" destination="Z6b-rA-2XA" id="eDZ-tz-uHY"/>
+                        <outlet property="nameError" destination="Rb3-46-hIw" id="fMr-Xu-3Rs"/>
                         <outlet property="nameTextField" destination="pGZ-Lt-rgy" id="YQk-Lu-DNs"/>
+                        <outlet property="numberOfPeopleError" destination="mST-0Q-aqi" id="tV2-dl-A2a"/>
                         <outlet property="numberOfPeopleTextField" destination="iDc-g6-XDS" id="6Rc-tX-wBM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fn0-0L-vAS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2784" y="-38"/>
+            <point key="canvasLocation" x="2782.608695652174" y="-38.169642857142854"/>
         </scene>
         <!--Restaurants-->
         <scene sceneID="YGC-8F-7cR">
@@ -638,6 +680,7 @@
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemBackgroundColor"/>
     <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="mapMarker" width="1800" height="1780.800048828125"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
