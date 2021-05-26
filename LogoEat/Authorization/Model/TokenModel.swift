@@ -23,6 +23,6 @@ final class Token {
             let key = SettingsKeys.token.rawValue
             guard let token = newValue else { defaults.removeObject(forKey: key); return}
             defaults.set(token, forKey: key)
+        }
     }
-}
 }

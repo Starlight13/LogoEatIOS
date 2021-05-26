@@ -19,10 +19,16 @@ class SignupViewController: UIViewController {
     @IBOutlet var phoneError: UILabel!
     @IBOutlet var emailError: UILabel!
     @IBOutlet var passwordError: UILabel!
+    @IBOutlet var errorLabel: UILabel!
+    @IBOutlet var errorView: UIView!
+    
+    var message: String?
     
     let nameRegex = "^[a-z а-я A-Z А-Я,.'-]{3,}$"
-    let phoneRegex = "^[0-9]{10}$|^+380[0-9]{9}$"
+    let phoneRegex = "^\\+380[\\d]{9}$"
     let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+    let passwordRegex = "^(?=.*[0-9])(?=.*[a-z])(?=\\S+$).{8,}$"
+    
     
     
     override func viewDidLoad() {
@@ -43,8 +49,25 @@ class SignupViewController: UIViewController {
     //MARK: - Logic
     @objc func signup(sender: UIButton) {
         if allIsValid() {
-            self.dismiss(animated: true, completion: nil)
-        } else{
+            guard let email = emailTextField.text, let phoneNumber = phoneNumberTextField.text, let name = nameTextField.text, let password = passwordTextField.text else {return}
+            let group = DispatchGroup()
+            group.enter()
+            AuthorizationNetworkService.signup(name: name, phoneNumber: phoneNumber, email: email, password: password) { (dict) in
+                guard let message = dict["message"] as? String else {return}
+                self.message = message
+                group.leave()
+            }
+
+            group.notify(queue: .main){
+                if self.message == "User is successful Registered." {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showMessage"), object: nil)
+                    self.dismiss(animated: true, completion: nil)
+                    return
+                }
+                self.errorLabel.text = self.message
+                self.errorView.animShow()
+            }
+        } else {
             shake(errorLabel: nameError)
             shake(errorLabel: phoneError)
             shake(errorLabel: emailError)
@@ -52,6 +75,8 @@ class SignupViewController: UIViewController {
         }
         
     }
+    
+    //MARK: - Validation
     
     func shake(errorLabel: UILabel) {
         let animation = CABasicAnimation(keyPath: "position")
@@ -84,13 +109,7 @@ class SignupViewController: UIViewController {
             case 2:
                 return validate(textField: emailTextField, regex: emailRegex, errorLabel: emailError)
             case 3:
-                if passwordTextField.text!.count > 6 {
-                    passwordError.isHidden = true
-                    return true
-                } else{
-                    passwordError.isHidden = false
-                    return false
-                }
+                return validate(textField: passwordTextField, regex: passwordRegex, errorLabel: passwordError)
             default:
                 return true
             }
@@ -149,4 +168,27 @@ extension SignupViewController: UITextFieldDelegate {
         return false
     }
     
+}
+
+extension UIView{
+    func animShow(){
+        UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseIn],
+                       animations: {
+                        self.center.y += self.bounds.height-40
+                        self.layoutIfNeeded()
+                       }) { truth in
+            self.animHide()
+        }
+        self.isHidden = false
+    }
+    func animHide(){
+        UIView.animate(withDuration: 0.5, delay: 3, options: [.curveLinear],
+                       animations: {
+                        self.center.y -= self.bounds.height-40
+                        self.layoutIfNeeded()
+
+        },  completion: {(_ completed: Bool) -> Void in
+        self.isHidden = true
+            })
+    }
 }

@@ -98,13 +98,14 @@ class BookViewController: UIViewController, UITextFieldDelegate {
     }
     
     func allIsValid() -> Bool {
+        var flag = true
         let textFields = [nameTextField, dateTextField, numberOfPeopleTextField]
         for textField in textFields {
             if !validateTextField(textField: textField!) {
-                return false
+                flag = false
             }
         }
-        return true
+        return flag
     }
     
     

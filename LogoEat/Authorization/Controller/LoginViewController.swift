@@ -15,11 +15,15 @@ class LoginViewController: UIViewController {
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var signupButton: UIButton!
     @IBOutlet var emailError: UILabel!
+    @IBOutlet var messageView: UIView!
     
     let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     
+    var userCreated = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(showMessage), name:NSNotification.Name(rawValue: "showMessage"), object: nil)
         loginButton.addTarget(self, action: #selector(login(sender:)), for: .touchUpInside)
         touchupLoginScreen()
         
@@ -27,12 +31,22 @@ class LoginViewController: UIViewController {
         passwordTextField.delegate = self
     }
     
+    @objc func showMessage() {
+        messageView.animShow()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if userCreated == true {
+            messageView.animShow()
+        }
+    }
     //MARK: - Logic
     
     func validate() -> Bool{
         if emailTextField.text != nil{
             if emailTextField.text!.matches(emailRegex) {
                 emailError.isHidden = true
+                return true
             } else {
                 emailError.isHidden = false
                 let animation = CABasicAnimation(keyPath: "position")
@@ -59,9 +73,9 @@ class LoginViewController: UIViewController {
     }
     
     @objc func login (sender: UIButton) {
-        guard let email = emailTextField.text else { return }
-        guard let password = passwordTextField.text else {return}
         if validate(){
+            guard let email = emailTextField.text else { return }
+            guard let password = passwordTextField.text else {return}
             let group = DispatchGroup()
             group.enter()
             AuthorizationNetworkService.login(email: email, password: password) {(dict) in
@@ -73,13 +87,14 @@ class LoginViewController: UIViewController {
             group.notify(queue: .main){
                 if Token.token != nil {
                     let storyboard = UIStoryboard(name: "Restaurant", bundle: .main)
-                    let controller = storyboard.instantiateViewController(withIdentifier: "tabBarController")
+                    let controller = storyboard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
+                    controller.selectedIndex = 1
                     UIView.transition(with: UIApplication.shared.keyWindow!, duration: 0.5, options: .transitionFlipFromTop,
                                       animations: {
                                         UIApplication.shared.keyWindow!.rootViewController = controller
                                       })
+                    
                 }
-                
             }
         }
         
