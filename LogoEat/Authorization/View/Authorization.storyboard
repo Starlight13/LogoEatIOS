@@ -212,7 +212,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmh-Nx-mMl">
-                                <rect key="frame" x="0.0" y="-50" width="414" height="75"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User with this email already exists" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCF-Qw-YzP">
                                         <rect key="frame" x="36" y="26" width="284.5" height="23"/>
@@ -241,7 +241,7 @@
                         <constraints>
                             <constraint firstItem="aka-Ei-hdI" firstAttribute="top" secondItem="40F-NH-ZcY" secondAttribute="bottom" constant="80" id="11y-Pf-qO2"/>
                             <constraint firstItem="M6Z-5M-t50" firstAttribute="leading" secondItem="aka-Ei-hdI" secondAttribute="leading" id="1dO-aO-d5d"/>
-                            <constraint firstItem="gmh-Nx-mMl" firstAttribute="top" secondItem="vI5-Lx-nF5" secondAttribute="top" constant="-50" id="2ZS-BF-eBb"/>
+                            <constraint firstItem="gmh-Nx-mMl" firstAttribute="top" secondItem="vI5-Lx-nF5" secondAttribute="top" id="2ZS-BF-eBb"/>
                             <constraint firstItem="0Ff-CW-A1t" firstAttribute="top" secondItem="xLf-a3-Fhg" secondAttribute="bottom" id="7wB-ka-tOL"/>
                             <constraint firstItem="gmh-Nx-mMl" firstAttribute="centerX" secondItem="D4u-Kh-cOh" secondAttribute="centerX" id="9Zy-Gb-iva"/>
                             <constraint firstItem="xLf-a3-Fhg" firstAttribute="centerX" secondItem="D4u-Kh-cOh" secondAttribute="centerX" id="9fy-YP-dGt"/>

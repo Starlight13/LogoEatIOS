@@ -65,7 +65,7 @@ class SignupViewController: UIViewController {
                     return
                 }
                 self.errorLabel.text = self.message
-                self.errorView.animShow()
+                self.errorView.animShow(parameter: 0)
             }
         } else {
             shake(errorLabel: nameError)
@@ -171,20 +171,20 @@ extension SignupViewController: UITextFieldDelegate {
 }
 
 extension UIView{
-    func animShow(){
+    func animShow(parameter: CGFloat){
         UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseIn],
                        animations: {
-                        self.center.y += self.bounds.height-40
+                        self.center.y += self.bounds.height-parameter
                         self.layoutIfNeeded()
                        }) { truth in
-            self.animHide()
+            self.animHide(parameter: parameter)
         }
         self.isHidden = false
     }
-    func animHide(){
+    func animHide(parameter: CGFloat){
         UIView.animate(withDuration: 0.5, delay: 3, options: [.curveLinear],
                        animations: {
-                        self.center.y -= self.bounds.height-40
+                        self.center.y -= self.bounds.height-parameter
                         self.layoutIfNeeded()
 
         },  completion: {(_ completed: Bool) -> Void in

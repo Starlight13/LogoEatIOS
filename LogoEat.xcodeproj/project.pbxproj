@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B66BFDB822A1685EAAD949A /* Pods_LogoEat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB509EEF0AA07CF0DDE29CD6 /* Pods_LogoEat.framework */; };
 		7915D94726541BA30023CF3B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915D94626541BA30023CF3B /* NetworkService.swift */; };
 		7915D94B26541DC50023CF3B /* AuthorizationNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915D94A26541DC50023CF3B /* AuthorizationNetworkService.swift */; };
 		7915D94D265424200023CF3B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915D94C265424200023CF3B /* LoginViewController.swift */; };
@@ -14,6 +15,7 @@
 		7915D9562654EC5C0023CF3B /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7915D9552654EC5C0023CF3B /* Settings.storyboard */; };
 		7915D9582655034F0023CF3B /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915D9572655034F0023CF3B /* BookViewController.swift */; };
 		7915D95A26550CCE0023CF3B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915D95926550CCE0023CF3B /* SignupViewController.swift */; };
+		793CDBE72660322100FA7BA7 /* SettingsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793CDBE62660322100FA7BA7 /* SettingsNetworkService.swift */; };
 		795DE846265028EB00D6CE04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DE845265028EB00D6CE04 /* AppDelegate.swift */; };
 		795DE848265028EB00D6CE04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DE847265028EB00D6CE04 /* ViewController.swift */; };
 		795DE84B265028EB00D6CE04 /* Restaurant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795DE849265028EB00D6CE04 /* Restaurant.storyboard */; };
@@ -37,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C1477BFBF82FAFD63496238 /* Pods-LogoEat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogoEat.release.xcconfig"; path = "Target Support Files/Pods-LogoEat/Pods-LogoEat.release.xcconfig"; sourceTree = "<group>"; };
 		7915D94626541BA30023CF3B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		7915D94A26541DC50023CF3B /* AuthorizationNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationNetworkService.swift; sourceTree = "<group>"; };
 		7915D94C265424200023CF3B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		7915D9552654EC5C0023CF3B /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		7915D9572655034F0023CF3B /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		7915D95926550CCE0023CF3B /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		793CDBE62660322100FA7BA7 /* SettingsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNetworkService.swift; sourceTree = "<group>"; };
 		795DE842265028EB00D6CE04 /* LogoEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogoEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		795DE845265028EB00D6CE04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		795DE847265028EB00D6CE04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 		79CF5ABD265966E700CB4AD2 /* ChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeViewController.swift; sourceTree = "<group>"; };
 		79CF5ABF2659673200CB4AD2 /* ChangeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeType.swift; sourceTree = "<group>"; };
 		79CF5AC126598C2700CB4AD2 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		DB509EEF0AA07CF0DDE29CD6 /* Pods_LogoEat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LogoEat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F84A58637A7EEB8A42E17A2B /* Pods-LogoEat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogoEat.debug.xcconfig"; path = "Target Support Files/Pods-LogoEat/Pods-LogoEat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B66BFDB822A1685EAAD949A /* Pods_LogoEat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +109,7 @@
 				7915D951265456390023CF3B /* Model */,
 				7915D950265456320023CF3B /* View */,
 				7915D94F265456290023CF3B /* Controller */,
+				793CDBE5266031E700FA7BA7 /* SettingsNetworkService */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -133,11 +141,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		793CDBE5266031E700FA7BA7 /* SettingsNetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				793CDBE62660322100FA7BA7 /* SettingsNetworkService.swift */,
+			);
+			path = SettingsNetworkService;
+			sourceTree = "<group>";
+		};
 		795DE839265028EB00D6CE04 = {
 			isa = PBXGroup;
 			children = (
 				795DE844265028EB00D6CE04 /* LogoEat */,
 				795DE843265028EB00D6CE04 /* Products */,
+				8DC810213D9B3A50B062C151 /* Pods */,
+				D20512BC5841E8089265D24A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -274,6 +292,23 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		8DC810213D9B3A50B062C151 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F84A58637A7EEB8A42E17A2B /* Pods-LogoEat.debug.xcconfig */,
+				5C1477BFBF82FAFD63496238 /* Pods-LogoEat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D20512BC5841E8089265D24A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB509EEF0AA07CF0DDE29CD6 /* Pods_LogoEat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -281,9 +316,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 795DE857265028ED00D6CE04 /* Build configuration list for PBXNativeTarget "LogoEat" */;
 			buildPhases = (
+				68190A62232ED7F2571C7ABE /* [CP] Check Pods Manifest.lock */,
 				795DE83E265028EB00D6CE04 /* Sources */,
 				795DE83F265028EB00D6CE04 /* Frameworks */,
 				795DE840265028EB00D6CE04 /* Resources */,
+				5D0B2EC121CB7E2B47707AF7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -342,6 +379,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5D0B2EC121CB7E2B47707AF7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LogoEat/Pods-LogoEat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LogoEat/Pods-LogoEat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LogoEat/Pods-LogoEat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68190A62232ED7F2571C7ABE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LogoEat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		795DE83E265028EB00D6CE04 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -365,6 +444,7 @@
 				795DE846265028EB00D6CE04 /* AppDelegate.swift in Sources */,
 				79A6980B2652D7B0001D57E3 /* TokenModel.swift in Sources */,
 				7915D9582655034F0023CF3B /* BookViewController.swift in Sources */,
+				793CDBE72660322100FA7BA7 /* SettingsNetworkService.swift in Sources */,
 				7915D94D265424200023CF3B /* LoginViewController.swift in Sources */,
 				79A697F72651A7B5001D57E3 /* BookingModel.swift in Sources */,
 				79CF5ABC2659330900CB4AD2 /* UserModel.swift in Sources */,
@@ -514,6 +594,7 @@
 		};
 		795DE858265028ED00D6CE04 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F84A58637A7EEB8A42E17A2B /* Pods-LogoEat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -531,6 +612,7 @@
 		};
 		795DE859265028ED00D6CE04 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C1477BFBF82FAFD63496238 /* Pods-LogoEat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

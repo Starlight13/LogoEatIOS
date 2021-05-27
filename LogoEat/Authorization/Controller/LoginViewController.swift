@@ -32,12 +32,12 @@ class LoginViewController: UIViewController {
     }
     
     @objc func showMessage() {
-        messageView.animShow()
+        messageView.animShow(parameter: 40)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         if userCreated == true {
-            messageView.animShow()
+            messageView.animShow(parameter: 40)
         }
     }
     //MARK: - Logic

@@ -48,17 +48,38 @@
                                                     <color key="textColor" systemColor="systemBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y3i-3g-LEl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User info was successfully updated." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJe-R6-adr">
+                                                            <rect key="frame" x="36" y="26" width="303" height="23"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.5462213159" green="0.69183468820000005" blue="0.61175662279999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstItem="EJe-R6-adr" firstAttribute="centerY" secondItem="y3i-3g-LEl" secondAttribute="centerY" id="F2B-nC-QsY"/>
+                                                        <constraint firstAttribute="height" constant="75" id="LRM-Gz-X6W"/>
+                                                        <constraint firstItem="EJe-R6-adr" firstAttribute="leading" secondItem="y3i-3g-LEl" secondAttribute="leading" constant="36" id="NBA-7u-CVg"/>
+                                                        <constraint firstAttribute="width" constant="414" id="v9B-8Q-r8z"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.33634954690000002" green="0.34492808580000001" blue="0.48629260060000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
+                                                <constraint firstItem="y3i-3g-LEl" firstAttribute="top" secondItem="xPt-JI-3Jf" secondAttribute="top" id="3J0-P4-DpA"/>
                                                 <constraint firstItem="a5j-be-Vhf" firstAttribute="top" secondItem="fxr-wf-CAu" secondAttribute="bottom" constant="8" id="CaV-uC-Hf7"/>
                                                 <constraint firstItem="fxr-wf-CAu" firstAttribute="leading" secondItem="Kg5-Mh-uib" secondAttribute="trailing" constant="5" id="Mpn-Oa-H5s"/>
                                                 <constraint firstItem="a5j-be-Vhf" firstAttribute="leading" secondItem="Kg5-Mh-uib" secondAttribute="trailing" constant="5" id="N7i-bl-9ZM"/>
+                                                <constraint firstItem="y3i-3g-LEl" firstAttribute="leading" secondItem="xPt-JI-3Jf" secondAttribute="leading" id="S04-6f-fJt"/>
                                                 <constraint firstItem="a5j-be-Vhf" firstAttribute="centerX" secondItem="fxr-wf-CAu" secondAttribute="centerX" id="SFa-hL-kse"/>
                                                 <constraint firstItem="fxr-wf-CAu" firstAttribute="top" secondItem="xPt-JI-3Jf" secondAttribute="topMargin" constant="61" id="ar2-Y3-Bz8"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="a5j-be-Vhf" secondAttribute="trailing" constant="5" id="bgE-T1-IjQ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="fxr-wf-CAu" secondAttribute="trailing" constant="5" id="gwh-dQ-qQl"/>
                                                 <constraint firstItem="Kg5-Mh-uib" firstAttribute="centerY" secondItem="xPt-JI-3Jf" secondAttribute="centerY" id="hz8-Ym-Cc4"/>
+                                                <constraint firstAttribute="trailing" secondItem="y3i-3g-LEl" secondAttribute="trailing" id="lXn-I8-trI"/>
                                                 <constraint firstItem="Kg5-Mh-uib" firstAttribute="leading" secondItem="xPt-JI-3Jf" secondAttribute="leadingMargin" constant="30" id="ymn-I5-qBA"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -206,6 +227,8 @@
                         <outlet property="changePassword" destination="Cx7-83-qz0" id="cvI-bH-9YN"/>
                         <outlet property="likedRestaurantsButton" destination="xz7-xc-1iv" id="U8J-kC-mdr"/>
                         <outlet property="logoutButton" destination="TDu-oC-nKm" id="OnN-AU-QNw"/>
+                        <outlet property="message" destination="y3i-3g-LEl" id="Bc2-po-ToE"/>
+                        <outlet property="messageText" destination="EJe-R6-adr" id="41D-y4-RIB"/>
                         <outlet property="nameLabel" destination="fxr-wf-CAu" id="C2t-UQ-l1P"/>
                         <outlet property="phoneLabel" destination="a5j-be-Vhf" id="fo7-oy-aAg"/>
                     </connections>
@@ -247,7 +270,7 @@
                                         </state>
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter smth valid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sn3-B6-LvO">
-                                        <rect key="frame" x="37.5" y="142" width="123" height="21"/>
+                                        <rect key="frame" x="58.5" y="142" width="123" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.83555814719999999" green="0.50561495440000004" blue="0.47103464610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -263,9 +286,9 @@
                                     <constraint firstAttribute="height" constant="251" id="c4X-pJ-NvD"/>
                                     <constraint firstItem="dgq-h7-hrg" firstAttribute="centerX" secondItem="NnV-oE-gij" secondAttribute="centerX" id="cIF-sW-WWs"/>
                                     <constraint firstAttribute="trailing" secondItem="8eF-AT-JmA" secondAttribute="trailing" constant="2" id="dLT-bZ-iBg"/>
-                                    <constraint firstItem="Sn3-B6-LvO" firstAttribute="leading" secondItem="tTb-wV-blc" secondAttribute="leading" id="dSN-YE-jS2"/>
                                     <constraint firstItem="tTb-wV-blc" firstAttribute="centerX" secondItem="NnV-oE-gij" secondAttribute="centerX" id="pNA-pW-2yn"/>
                                     <constraint firstItem="tTb-wV-blc" firstAttribute="top" secondItem="8eF-AT-JmA" secondAttribute="bottom" constant="38" id="qgI-J2-ajS"/>
+                                    <constraint firstItem="Sn3-B6-LvO" firstAttribute="centerX" secondItem="tTb-wV-blc" secondAttribute="centerX" id="xK9-hf-VGT"/>
                                     <constraint firstItem="8eF-AT-JmA" firstAttribute="centerX" secondItem="NnV-oE-gij" secondAttribute="centerX" id="zs4-TG-vAk"/>
                                 </constraints>
                             </view>

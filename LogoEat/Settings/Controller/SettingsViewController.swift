@@ -18,12 +18,16 @@ class SettingsViewController: UITableViewController {
     @IBOutlet var changeNumberButton: UIButton!
     @IBOutlet var changePassword: UIButton!
     @IBOutlet var logoutButton: UIButton!
+    @IBOutlet var message: UIView!
+    @IBOutlet var messageText: UILabel!
     
     let user = User(name: "Olga", phone: "+38(067)-111-11-11", email: "email@gmail.com", likedRestaurants: [Restaurant(name: "Pototski", rating: 9.0, cuisine: "Ukrainian, Italian", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo velit ut quam ullamcorper porttitor.", location: "Khmelnystsky, Proskurivska, 45", image: "Pototski")])
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(showSuccessView), name:NSNotification.Name(rawValue: "showSuccessView"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showFailureView), name:NSNotification.Name(rawValue: "showFailureView"), object: nil)
         setupSettingsScreen()
         logoutButton.addTarget(self, action: #selector(logout(sender:)), for: .touchUpInside)
     }
@@ -36,6 +40,18 @@ class SettingsViewController: UITableViewController {
         
         nameLabel.text = user.name
         phoneLabel.text = user.phone
+    }
+    
+    @objc func showSuccessView() {
+        message.backgroundColor = UIColor(red: 0.506, green: 0.698, blue: 0.604, alpha: 1)
+        messageText.text = "User info successfully updated."
+        message.animShow(parameter: 0)
+    }
+    
+    @objc func showFailureView() {
+        message.backgroundColor = UIColor(red: 0.878, green: 0.478, blue: 0.373, alpha: 1)
+        messageText.text = "Invalid data was passed to server. Try again."
+        message.animShow(parameter: 0)
     }
     
     @objc func logout (sender: UIButton) {

@@ -11,6 +11,8 @@ import UIKit
 class ChangeViewController: UIViewController, UITextFieldDelegate {
     
     var changeType: ChangeType?
+    var message: String?
+    
     
     @IBOutlet var changeView: UIView!
     @IBOutlet var changeLabel: UILabel!
@@ -19,7 +21,8 @@ class ChangeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var validationError: UILabel!
     
     let nameRegex = "^[a-z а-я A-Z А-Я,.'-]{3,}$"
-    let phoneRegex = "^[0-9]{10}$|^+380[0-9]{9}$"
+    let phoneRegex = "^\\+380[\\d]{9}$"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,92 @@ class ChangeViewController: UIViewController, UITextFieldDelegate {
     
    
     //MARK: - Logic
+    
+    // TODO: - Pass change to server
+    @objc func makeChange() {
+        if validateTextField() {
+            switch changeType {
+            case .name:
+                changeName(name: changeField.text!)
+            case .phone:
+                changePhoneNumber(phoneNumber: changeField.text!)
+            case .password:
+                changePassword(password: changeField.text!)
+            default:
+                print("Not done")
+            }
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            shake(errorLabel: validationError)
+        }
+        
+    }
+    
+    
+    private func changeName(name: String){
+        let group = DispatchGroup()
+        group.enter()
+        SettingsNetworkService.makeChangeRequest(parameters: ["name": name], requestUrl: "update_name") { (dict) in
+            guard let message = dict["message"] as? String else {return}
+            self.message = message
+            group.leave()
+        }
+
+        group.notify(queue: .main){
+            if self.message == "Name was changed." {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showSuccessView"), object: nil)
+                self.dismiss(animated: true, completion: nil)
+                return
+            }
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showFailureView"), object: nil)
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+    }
+    
+    private func changePhoneNumber(phoneNumber: String){
+        let group = DispatchGroup()
+        group.enter()
+        SettingsNetworkService.makeChangeRequest(parameters: ["phoneNumber": phoneNumber], requestUrl: "update_phone_number") { (dict) in
+            guard let message = dict["message"] as? String else {return}
+            self.message = message
+            group.leave()
+        }
+
+        group.notify(queue: .main){
+            if self.message == "Number was changed." {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showSuccessView"), object: nil)
+                self.dismiss(animated: true, completion: nil)
+                return
+            }
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showFailureView"), object: nil)
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+    }
+    
+    private func changePassword(password: String){
+        let group = DispatchGroup()
+        group.enter()
+        SettingsNetworkService.makeChangeRequest(parameters: ["password": password], requestUrl: "update_password") { (dict) in
+            guard let message = dict["message"] as? String else {return}
+            self.message = message
+            group.leave()
+        }
+
+        group.notify(queue: .main){
+            if self.message == "Password was changed." {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showSuccessView"), object: nil)
+                self.dismiss(animated: true, completion: nil)
+                return
+            }
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "showFailureView"), object: nil)
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+    }
+    
+    //MARK: -Validation
     
     func validate(textField: UITextField, regex: String, errorLabel: UILabel) -> Bool {
         if textField.text!.matches(regex) {
@@ -51,7 +140,7 @@ class ChangeViewController: UIViewController, UITextFieldDelegate {
                 } else {return true}
             case .phone:
                 if !validate(textField: changeField, regex: phoneRegex, errorLabel: validationError) {
-                    validationError.text = "Enter valid phone number"
+                    validationError.text = "Valid format: +380*******"
                     return false
                 } else {return true}
             case .password:
@@ -79,16 +168,6 @@ class ChangeViewController: UIViewController, UITextFieldDelegate {
         animation.toValue = NSValue(cgPoint: CGPoint(x: errorLabel.center.x + 10, y: errorLabel.center.y))
 
         errorLabel.layer.add(animation, forKey: "position")
-    }
-    
-    // TODO: - Pass change to server
-    @objc func makeChange() {
-        if validateTextField() {
-            self.dismiss(animated: true, completion: nil)
-        } else {
-            shake(errorLabel: validationError)
-        }
-        
     }
     
     //MARK: -Setup
