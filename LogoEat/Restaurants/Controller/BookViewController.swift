@@ -40,6 +40,8 @@ class BookViewController: UIViewController, UITextFieldDelegate {
     
     @objc func book(sender: UIButton){
         if allIsValid() {
+            let booking = Booking(name: nameTextField.text!, numberOfPeople: Int(numberOfPeopleTextField.text!)!, date: datePicker.date, restaurant: currentRestaurant!)
+            LocalStorageManager.saveObject(booking)
             self.dismiss(animated: true, completion: nil)
         } else {
             shake(errorLabel: nameError)

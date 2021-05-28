@@ -25,7 +25,7 @@ class RestaurantTableViewCell: UITableViewCell {
     }
     
     func configure(with restaurant: Restaurant) {
-        self.restaurantImage.image = UIImage(named: restaurant.image)
+        self.restaurantImage.image = UIImage(data: restaurant.image!)
         self.restaurantImage.layer.cornerRadius = 10
         self.restaurantImage.clipsToBounds = true
         

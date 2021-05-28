@@ -16,6 +16,7 @@
 		7915D9582655034F0023CF3B /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915D9572655034F0023CF3B /* BookViewController.swift */; };
 		7915D95A26550CCE0023CF3B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7915D95926550CCE0023CF3B /* SignupViewController.swift */; };
 		793CDBE72660322100FA7BA7 /* SettingsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793CDBE62660322100FA7BA7 /* SettingsNetworkService.swift */; };
+		795075252660EDA90057819A /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795075242660EDA90057819A /* LocalStorageManager.swift */; };
 		795DE846265028EB00D6CE04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DE845265028EB00D6CE04 /* AppDelegate.swift */; };
 		795DE848265028EB00D6CE04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795DE847265028EB00D6CE04 /* ViewController.swift */; };
 		795DE84B265028EB00D6CE04 /* Restaurant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795DE849265028EB00D6CE04 /* Restaurant.storyboard */; };
@@ -48,6 +49,7 @@
 		7915D9572655034F0023CF3B /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		7915D95926550CCE0023CF3B /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		793CDBE62660322100FA7BA7 /* SettingsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNetworkService.swift; sourceTree = "<group>"; };
+		795075242660EDA90057819A /* LocalStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
 		795DE842265028EB00D6CE04 /* LogoEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogoEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		795DE845265028EB00D6CE04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		795DE847265028EB00D6CE04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				795DE845265028EB00D6CE04 /* AppDelegate.swift */,
+				795075242660EDA90057819A /* LocalStorageManager.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -338,7 +341,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "dsadas asdasd";
 				TargetAttributes = {
 					795DE841265028EB00D6CE04 = {
@@ -441,6 +444,7 @@
 				7915D954265456730023CF3B /* SettingsViewController.swift in Sources */,
 				7915D95A26550CCE0023CF3B /* SignupViewController.swift in Sources */,
 				79CF5AC226598C2700CB4AD2 /* MapViewController.swift in Sources */,
+				795075252660EDA90057819A /* LocalStorageManager.swift in Sources */,
 				795DE846265028EB00D6CE04 /* AppDelegate.swift in Sources */,
 				79A6980B2652D7B0001D57E3 /* TokenModel.swift in Sources */,
 				7915D9582655034F0023CF3B /* BookViewController.swift in Sources */,
@@ -500,6 +504,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -562,6 +567,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

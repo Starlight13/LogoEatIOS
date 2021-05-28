@@ -21,7 +21,7 @@ class SettingsViewController: UITableViewController {
     @IBOutlet var message: UIView!
     @IBOutlet var messageText: UILabel!
     
-    let user = User(name: "Olga", phone: "+38(067)-111-11-11", email: "email@gmail.com", likedRestaurants: [Restaurant(name: "Pototski", rating: 9.0, cuisine: "Ukrainian, Italian", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo velit ut quam ullamcorper porttitor.", location: "Khmelnystsky, Proskurivska, 45", image: "Pototski")])
+    let user = User(name: "Olga", phone: "+38(067)-111-11-11", email: "email@gmail.com", likedRestaurants: [Restaurant(id: 1, name: "Pototski", rating: 9.0, cuisine: "Ukrainian, Italian", restaurantDescription: "Good restaurant for good people.", location: "Khmelnystsky, Proskurivska, 45", image: (UIImage(named: "Pototski")?.pngData())!)])
     
     
     override func viewDidLoad() {

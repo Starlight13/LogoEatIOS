@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,12 +26,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             storyboard = UIStoryboard(name: "Authorization", bundle: .main)
             initialViewController = storyboard.instantiateViewController(withIdentifier: "loginViewController")
         }
-
+        
         self.window?.rootViewController = initialViewController
         self.window?.makeKeyAndVisible()
         if window?.rootViewController as? UITabBarController != nil {
             let tabBarController = window!.rootViewController as! UITabBarController
             tabBarController.selectedIndex = 1
+        }
+        let config = Realm.Configuration(
+            schemaVersion: 7,
+            migrationBlock: { migration, oldSchemaVersion in
+                
+                if (oldSchemaVersion < 7) {
+                    // Nothing to do!
+                    
+                }
+            })
+        Realm.Configuration.defaultConfiguration = config
+        
+        let configCheck = Realm.Configuration();
+        do {
+            let fileUrlIs = try schemaVersionAtURL(configCheck.fileURL!)
+            print("schema version \(fileUrlIs)")
+        } catch  {
+            print(error)
         }
         return true
     }

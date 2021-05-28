@@ -61,8 +61,8 @@ class DetailViewController: UITableViewController, UIGestureRecognizerDelegate{
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         }
         if currentRestaurant != nil{
-            guard let imageName = currentRestaurant?.image else {return}
-            restaurantImage.image = UIImage(named: imageName)
+            guard let image = currentRestaurant?.image else {return}
+            restaurantImage.image = UIImage(data: image)
             nameLabel.text = currentRestaurant?.name
             
             ratingLabel.text = String(currentRestaurant!.rating)
@@ -78,7 +78,7 @@ class DetailViewController: UITableViewController, UIGestureRecognizerDelegate{
             
             
             cuisineLabel.text = currentRestaurant?.cuisine
-            descriptionLabel.text = currentRestaurant?.description
+            descriptionLabel.text = currentRestaurant?.restaurantDescription
             locationLabel.text = currentRestaurant?.location
         }
     }

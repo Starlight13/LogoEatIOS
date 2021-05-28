@@ -145,7 +145,7 @@ extension MapViewController: MKMapViewDelegate {
             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
             imageView.layer.cornerRadius = 10
             imageView.clipsToBounds = true
-            imageView.image = UIImage(named: imageData)
+//            imageView.image = UIImage(named: imageData)
             annotationView?.rightCalloutAccessoryView = imageView
         }
         return annotationView

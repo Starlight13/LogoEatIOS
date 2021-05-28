@@ -7,30 +7,45 @@
 //
 
 import UIKit
+import RealmSwift
+
 
 class BookingsTableViewController: UITableViewController {
     
+    var bookings: Results<Booking>!
+    var sectionsInTable = [Date]()
+    var notificationToken: NotificationToken? = nil
     
+    let myRefreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        return refreshControl
+    }()
     
-    
-    var bookings = [
-        Booking(date: "20 May, 19:00", restaurant: Restaurant(name: "Pototski", rating: 9.0, cuisine: "Ukrainian, Italian", description: "Good restaurant for good people.",  location: "Khmel", image: "Pototski")),
-        Booking(date: "13 June, 18:30", restaurant: Restaurant(name: "Pototski", rating: 9.0, cuisine: "Ukrainian, Italian", description: "Good restaurant for good people.",  location: "Khmel", image: "Pototski"))
-    ]
-    
-    var sectionsInTable = [String]()
-    
+    @objc func refresh(sender: UIRefreshControl) {
+        sender.endRefreshing()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.refreshControl = myRefreshControl
+        
+        bookings = realm.objects(Booking.self)
+        
         tableView.backgroundColor = UIColor(red: 0.335, green: 0.35, blue: 0.488, alpha: 1)
         navigationController?.navigationBar.barTintColor = UIColor(red: 0.239, green: 0.251, blue: 0.357, alpha: 1)
         tabBarController?.tabBar.barTintColor = UIColor(red: 0.239, green: 0.251, blue: 0.357, alpha: 1)
         
-        for booking in bookings{
-            sectionsInTable.append(booking.date)
+        if !bookings.isEmpty{
+            for booking in bookings{
+                sectionsInTable.append(booking.date)
+            }
         }
         self.tableView.reloadData()
+    }
+    
+    deinit {
+        notificationToken?.invalidate()
     }
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -42,10 +57,9 @@ class BookingsTableViewController: UITableViewController {
     // MARK: - Table view data source
     func getSectionItems(section: Int) -> [Booking] {
         var sectionItems = [Booking]()
-        
-        // loop through the testArray to get the items for this sections's date
+        if !bookings.isEmpty{
         sectionItems.append(bookings[section])
-        
+        }
         return sectionItems
     }
     
@@ -61,25 +75,29 @@ class BookingsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RestaurantTableViewCell
-        
+
         let sectionItems = self.getSectionItems(section: indexPath.section)
         let booking = sectionItems[indexPath.row]
-        
-        cell.configure(with: booking.restaurant)
-        
-        
+
+        cell.configure(with: booking.restaurant!)
+
+
         return cell
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionsInTable[section]
+        let formatter = DateFormatter()
+        formatter.dateFormat = "E, d MMM HH:mm"
+        return formatter.string(from: sectionsInTable[section])
     }
     
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
+        let booking = self.bookings[indexPath.row]
+        
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: {(_,_) in
-            self.bookings.remove(at: indexPath.section)
+            LocalStorageManager.deleteObject(booking)
             self.sectionsInTable.remove(at: indexPath.section)
             tableView.deleteSections([indexPath.section], with: .automatic)
         })

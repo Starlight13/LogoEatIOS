@@ -21,10 +21,11 @@ class RestaurantsTableViewController: UITableViewController {
     }
     
     private var filteredRestaurants = [Restaurant]()
+    let imageData = UIImage(named: "Pototski")?.pngData()
     private let restaurants = [
-        Restaurant(name: "Pototski", rating: 9.0, cuisine: "Ukrainian, Italian", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo velit ut quam ullamcorper porttitor.", location: "Khmelnystsky, Proskurivska, 45", image: "Pototski"),
-        Restaurant(name: "Shpigel", rating: 4.5, cuisine: "Israel", description: "Good restaurant for good people.", location: "Khmelnystsky", image: "Pototski"),
-        Restaurant(name: "Craft", rating: 8.8, cuisine: "American, European", description: "Good restaurant for good people.",  location: "Khmelnystsky", image: "Pototski")
+        Restaurant(id: 1, name: "Pototski", rating: 9.0, cuisine: "Ukrainian, Italian", restaurantDescription: "Good restaurant for good people.", location: "Khmelnystsky, Proskurivska, 45", image: (UIImage(named: "Pototski")?.pngData())!),
+        Restaurant(id: 2, name: "Shpigel", rating: 4.5, cuisine: "Israel", restaurantDescription: "Good restaurant for good people.", location: "Khmelnystsky", image: (UIImage(named: "Pototski")?.pngData())!),
+        Restaurant(id: 3, name: "Craft", rating: 8.8, cuisine: "American, European", restaurantDescription: "Good restaurant for good people.",  location: "Khmelnystsky", image: (UIImage(named: "Pototski")?.pngData())!)
     ]
     
     
@@ -36,7 +37,7 @@ class RestaurantsTableViewController: UITableViewController {
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 0.239, green: 0.251, blue: 0.357, alpha: 1)
         // Search controller setup
-        searchController.searchResultsUpdater = self
+//        searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search restaurant"
         navigationItem.searchController = searchController
@@ -54,17 +55,17 @@ class RestaurantsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RestaurantTableViewCell
-        
-        var restaurant = Restaurant(name: "", rating: 0, cuisine: "", description: "", location: "", image: "")
-        
+
+        var restaurant: Restaurant?
+
         if isFiltering {
             restaurant = filteredRestaurants[indexPath.row]
         } else {
             restaurant = restaurants[indexPath.row]
         }
-        
-        cell.configure(with: restaurant)
-        
+
+        cell.configure(with: restaurant!)
+
         return cell
     }
     
@@ -76,14 +77,14 @@ class RestaurantsTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow else {return}
-        var restaurant = Restaurant(name: "", rating: 0, cuisine: "", description: "", location: "", image: "")
+        var restaurant: Restaurant?
         if isFiltering == true {
             restaurant = filteredRestaurants[indexPath.row]
         } else {
             restaurant = restaurants[indexPath.row]
         }
         let newDetailVC = segue.destination as! DetailViewController
-        newDetailVC.currentRestaurant = restaurant
+        newDetailVC.currentRestaurant = restaurant!
     }
     
     
