@@ -165,6 +165,7 @@
                             <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xLf-a3-Fhg">
                                 <rect key="frame" x="87" y="397" width="240" height="66"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="e-mail"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="E3X-fD-8GY"/>
                                     <constraint firstAttribute="width" constant="240" id="GsP-Jp-sD5"/>
@@ -184,6 +185,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhq-N3-tfh">
                                 <rect key="frame" x="142" y="599" width="130" height="50"/>
+                                <accessibility key="accessibilityConfiguration" identifier="sign-up"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="dyt-fz-9eO"/>
                                     <constraint firstAttribute="height" constant="50" id="rbH-3b-r5Q"/>
@@ -231,6 +233,7 @@
                             </view>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter valid email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ff-CW-A1t">
                                 <rect key="frame" x="87" y="463" width="126" height="21"/>
+                                <accessibility key="accessibilityConfiguration" identifier="e-mail error"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.83555814719999999" green="0.50561495440000004" blue="0.47103464610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>

@@ -91,8 +91,6 @@ class MapViewController: UIViewController {
     }
     
     private func setupLocationManager() {
-        let userLocationButton = MKUserTrackingButton(mapView: mapView)
-        view.addSubview(userLocationButton)
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
@@ -145,7 +143,7 @@ extension MapViewController: MKMapViewDelegate {
             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
             imageView.layer.cornerRadius = 10
             imageView.clipsToBounds = true
-//            imageView.image = UIImage(named: imageData)
+            imageView.image = UIImage(data: imageData)
             annotationView?.rightCalloutAccessoryView = imageView
         }
         return annotationView

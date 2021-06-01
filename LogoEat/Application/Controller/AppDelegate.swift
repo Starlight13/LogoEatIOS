@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var initialViewController: UIViewController
         var storyboard: UIStoryboard
         if Token.token != nil {
+            print(Token.token)
             storyboard = UIStoryboard(name: "Restaurant", bundle: .main)
             initialViewController = storyboard.instantiateViewController(withIdentifier: "tabBarController")
         } else {

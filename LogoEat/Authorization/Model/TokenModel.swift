@@ -22,7 +22,7 @@ final class Token {
             let defaults = UserDefaults.standard
             let key = SettingsKeys.token.rawValue
             guard let token = newValue else { defaults.removeObject(forKey: key); return}
-            defaults.set(token, forKey: key)
+            defaults.set(token, forKey: "token")
         }
     }
 }

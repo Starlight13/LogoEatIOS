@@ -23,6 +23,8 @@
 		795DE84E265028EB00D6CE04 /* LogoEat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 795DE84C265028EB00D6CE04 /* LogoEat.xcdatamodeld */; };
 		795DE850265028ED00D6CE04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795DE84F265028ED00D6CE04 /* Assets.xcassets */; };
 		795DE853265028ED00D6CE04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795DE851265028ED00D6CE04 /* LaunchScreen.storyboard */; };
+		79680A3D26657B6800389E0A /* LogoEatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79680A3C26657B6800389E0A /* LogoEatUITests.swift */; };
+		79917A922666C858007AD9E1 /* RestaurantsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79917A912666C858007AD9E1 /* RestaurantsNetworkService.swift */; };
 		79A15A7726512341002D2252 /* RestaurantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A15A7626512341002D2252 /* RestaurantsTableViewController.swift */; };
 		79A15A792651241B002D2252 /* BookingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A15A782651241B002D2252 /* BookingsTableViewController.swift */; };
 		79A15A7B26513883002D2252 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A15A7A26513883002D2252 /* RestaurantTableViewCell.swift */; };
@@ -38,6 +40,16 @@
 		79CF5AC02659673200CB4AD2 /* ChangeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CF5ABF2659673200CB4AD2 /* ChangeType.swift */; };
 		79CF5AC226598C2700CB4AD2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CF5AC126598C2700CB4AD2 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		79680A3F26657B6800389E0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 795DE83A265028EB00D6CE04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 795DE841265028EB00D6CE04;
+			remoteInfo = LogoEat;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5C1477BFBF82FAFD63496238 /* Pods-LogoEat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogoEat.release.xcconfig"; path = "Target Support Files/Pods-LogoEat/Pods-LogoEat.release.xcconfig"; sourceTree = "<group>"; };
@@ -58,6 +70,10 @@
 		795DE84F265028ED00D6CE04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		795DE852265028ED00D6CE04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		795DE854265028ED00D6CE04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79680A3A26657B6800389E0A /* LogoEatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogoEatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79680A3C26657B6800389E0A /* LogoEatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoEatUITests.swift; sourceTree = "<group>"; };
+		79680A3E26657B6800389E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79917A912666C858007AD9E1 /* RestaurantsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsNetworkService.swift; sourceTree = "<group>"; };
 		79A15A7626512341002D2252 /* RestaurantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsTableViewController.swift; sourceTree = "<group>"; };
 		79A15A782651241B002D2252 /* BookingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingsTableViewController.swift; sourceTree = "<group>"; };
 		79A15A7A26513883002D2252 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
@@ -82,6 +98,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B66BFDB822A1685EAAD949A /* Pods_LogoEat.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79680A3726657B6800389E0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				795DE844265028EB00D6CE04 /* LogoEat */,
+				79680A3B26657B6800389E0A /* LogoEatUITests */,
 				795DE843265028EB00D6CE04 /* Products */,
 				8DC810213D9B3A50B062C151 /* Pods */,
 				D20512BC5841E8089265D24A /* Frameworks */,
@@ -165,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				795DE842265028EB00D6CE04 /* LogoEat.app */,
+				79680A3A26657B6800389E0A /* LogoEatUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,6 +207,23 @@
 				795DE84C265028EB00D6CE04 /* LogoEat.xcdatamodeld */,
 			);
 			path = LogoEat;
+			sourceTree = "<group>";
+		};
+		79680A3B26657B6800389E0A /* LogoEatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				79680A3C26657B6800389E0A /* LogoEatUITests.swift */,
+				79680A3E26657B6800389E0A /* Info.plist */,
+			);
+			path = LogoEatUITests;
+			sourceTree = "<group>";
+		};
+		79917A902666C82F007AD9E1 /* RestaurantsNetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				79917A912666C858007AD9E1 /* RestaurantsNetworkService.swift */,
+			);
+			path = RestaurantsNetworkService;
 			sourceTree = "<group>";
 		};
 		79A697FA2652AF36001D57E3 /* Application */ = {
@@ -225,6 +267,7 @@
 				79A698012652AFB1001D57E3 /* Model */,
 				79A698002652AFAA001D57E3 /* View */,
 				79A697FF2652AF9B001D57E3 /* Controller */,
+				79917A902666C82F007AD9E1 /* RestaurantsNetworkService */,
 			);
 			path = Restaurants;
 			sourceTree = "<group>";
@@ -334,18 +377,40 @@
 			productReference = 795DE842265028EB00D6CE04 /* LogoEat.app */;
 			productType = "com.apple.product-type.application";
 		};
+		79680A3926657B6800389E0A /* LogoEatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79680A4326657B6800389E0A /* Build configuration list for PBXNativeTarget "LogoEatUITests" */;
+			buildPhases = (
+				79680A3626657B6800389E0A /* Sources */,
+				79680A3726657B6800389E0A /* Frameworks */,
+				79680A3826657B6800389E0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79680A4026657B6800389E0A /* PBXTargetDependency */,
+			);
+			name = LogoEatUITests;
+			productName = LogoEatUITests;
+			productReference = 79680A3A26657B6800389E0A /* LogoEatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		795DE83A265028EB00D6CE04 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "dsadas asdasd";
 				TargetAttributes = {
 					795DE841265028EB00D6CE04 = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					79680A3926657B6800389E0A = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 795DE841265028EB00D6CE04;
 					};
 				};
 			};
@@ -363,6 +428,7 @@
 			projectRoot = "";
 			targets = (
 				795DE841265028EB00D6CE04 /* LogoEat */,
+				79680A3926657B6800389E0A /* LogoEatUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -377,6 +443,13 @@
 				795DE850265028ED00D6CE04 /* Assets.xcassets in Resources */,
 				795DE84B265028EB00D6CE04 /* Restaurant.storyboard in Resources */,
 				7915D9562654EC5C0023CF3B /* Settings.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79680A3826657B6800389E0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +505,7 @@
 				7915D94726541BA30023CF3B /* NetworkService.swift in Sources */,
 				79A697F92651BDE1001D57E3 /* DetailViewController.swift in Sources */,
 				79A15A7B26513883002D2252 /* RestaurantTableViewCell.swift in Sources */,
+				79917A922666C858007AD9E1 /* RestaurantsNetworkService.swift in Sources */,
 				79C9F340265E446700D09886 /* apiEndpoints.swift in Sources */,
 				795DE84E265028EB00D6CE04 /* LogoEat.xcdatamodeld in Sources */,
 				7915D94B26541DC50023CF3B /* AuthorizationNetworkService.swift in Sources */,
@@ -456,7 +530,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		79680A3626657B6800389E0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79680A3D26657B6800389E0A /* LogoEatUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		79680A4026657B6800389E0A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 795DE841265028EB00D6CE04 /* LogoEat */;
+			targetProxy = 79680A3F26657B6800389E0A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		795DE849265028EB00D6CE04 /* Restaurant.storyboard */ = {
@@ -634,6 +724,44 @@
 			};
 			name = Release;
 		};
+		79680A4126657B6800389E0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LogoEatUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "-.LogoEatUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LogoEat;
+			};
+			name = Debug;
+		};
+		79680A4226657B6800389E0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LogoEatUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "-.LogoEatUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LogoEat;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -651,6 +779,15 @@
 			buildConfigurations = (
 				795DE858265028ED00D6CE04 /* Debug */,
 				795DE859265028ED00D6CE04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79680A4326657B6800389E0A /* Build configuration list for PBXNativeTarget "LogoEatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79680A4126657B6800389E0A /* Debug */,
+				79680A4226657B6800389E0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

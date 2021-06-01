@@ -21,23 +21,33 @@ class RestaurantsTableViewController: UITableViewController {
     }
     
     private var filteredRestaurants = [Restaurant]()
-    let imageData = UIImage(named: "Pototski")?.pngData()
-    private let restaurants = [
-        Restaurant(id: 1, name: "Pototski", rating: 9.0, cuisine: "Ukrainian, Italian", restaurantDescription: "Good restaurant for good people.", location: "Khmelnystsky, Proskurivska, 45", image: (UIImage(named: "Pototski")?.pngData())!),
-        Restaurant(id: 2, name: "Shpigel", rating: 4.5, cuisine: "Israel", restaurantDescription: "Good restaurant for good people.", location: "Khmelnystsky", image: (UIImage(named: "Pototski")?.pngData())!),
-        Restaurant(id: 3, name: "Craft", rating: 8.8, cuisine: "American, European", restaurantDescription: "Good restaurant for good people.",  location: "Khmelnystsky", image: (UIImage(named: "Pototski")?.pngData())!)
-    ]
+    var restaurants:[Restaurant] = []
     
-    
+//    let imageData = UIImage(named: "Pototski")?.pngData()
+//    private let restaurants = [
+//        Restaurant(id: 1, name: "Pototski", rating: 9.0, cuisine: "Ukrainian, Italian", restaurantDescription: "Good restaurant for good people.", location: "Khmelnystsky, Proskurivska, 45", image: (UIImage(named: "Pototski")?.pngData())!),
+//        Restaurant(id: 2, name: "Shpigel", rating: 4.5, cuisine: "Israel", restaurantDescription: "Good restaurant for good people.", location: "Khmelnystsky", image: (UIImage(named: "Pototski")?.pngData())!),
+//        Restaurant(id: 3, name: "Craft", rating: 8.8, cuisine: "American, European", restaurantDescription: "Good restaurant for good people.",  location: "Khmelnystsky", image: (UIImage(named: "Pototski")?.pngData())!)
+//    ]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let group = DispatchGroup()
+        group.enter()
+        RestaurantsNetworkService.getRestaurants { (jsonArray) in
+            print(jsonArray)
+            self.restaurants = jsonArray.compactMap{ return Restaurant($0)}
+            group.leave()
+        }
         
+        group.notify(queue: .main){
+            self.tableView.reloadData()
+        }
         tableView.backgroundColor = UIColor(red: 0.335, green: 0.35, blue: 0.488, alpha: 1)
-        
         navigationController?.navigationBar.barTintColor = UIColor(red: 0.239, green: 0.251, blue: 0.357, alpha: 1)
         // Search controller setup
-//        searchController.searchResultsUpdater = self
+        searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search restaurant"
         navigationItem.searchController = searchController
