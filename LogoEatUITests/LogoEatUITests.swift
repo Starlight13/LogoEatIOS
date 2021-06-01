@@ -23,43 +23,47 @@ class LogoEatUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testSignupValidation() throws {
+    func testChangePhoneNumberValidation() throws {
         
-        let invalidEmail = "invalid@@mail.ru"
+        let invalidPhoneNumber = "012345678"
         
         
         let app = XCUIApplication()
         app.launch()
-        app.buttons["Sign up"].tap()
-        let emailTextField = app.textFields["e-mail"]
-        emailTextField.tap()
-        emailTextField.typeText(invalidEmail)
-        emailTextField.typeText("\n")
-        app.buttons["sign-up"].tap()
-        let emailError = app.staticTexts["e-mail error"]
+        let tabBar = XCUIApplication().tabBars
+        tabBar.buttons["Settings"].tap()
+        app.buttons["change-phone"].tap()
+        let textField = app.textFields.firstMatch
+        textField.tap()
+        textField.typeText(invalidPhoneNumber)
+        textField.typeText("\n")
+        app.buttons["confirm"].tap()
+        let phoneError = app.staticTexts["change-error"]
         
-        expectation(for: NSPredicate(format: "exists == 1"), evaluatedWith: emailError, handler: nil)
+        expectation(for: NSPredicate(format: "exists == 1"), evaluatedWith: phoneError, handler: nil)
         
         waitForExpectations(timeout: 5, handler: nil)
-        
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testDetailScreen() throws {
         let app = XCUIApplication()
         app.launch()
-        
+        let tableView = app.tables.firstMatch
+        let tableCell = tableView.cells.firstMatch
+        let check = tableCell.staticTexts["booking-name"].value
+        tableCell.tap()
+        let restaurantName = app.staticTexts["detail-name"].value
+        XCTAssertEqual(restaurantName as! String, check as! String)
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
+//    func testLaunchPerformance() throws {
+//        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
+//            // This measures how long it takes to launch your application.
+//            measure(metrics: [XCTApplicationLaunchMetric()]) {
+//                XCUIApplication().launch()
+//            }
+//        }
+//    }
 }
 
 extension XCUIElement {

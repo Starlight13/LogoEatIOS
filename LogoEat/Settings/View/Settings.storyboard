@@ -145,6 +145,7 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nen-Rs-0Cv">
                                                     <rect key="frame" x="30" y="0.0" width="384" height="60"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="change-phone"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                     <state key="normal" title="Change phone number">
                                                         <color key="titleColor" systemColor="labelColor"/>
@@ -262,6 +263,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgq-h7-hrg">
                                         <rect key="frame" x="37.5" y="182" width="165" height="30"/>
                                         <color key="backgroundColor" red="0.5462213159" green="0.69183468820000005" blue="0.61175662279999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="confirm"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="165" id="bY3-jL-90y"/>
                                         </constraints>
@@ -271,6 +273,7 @@
                                     </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter smth valid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sn3-B6-LvO">
                                         <rect key="frame" x="58.5" y="142" width="123" height="21"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="change-error"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.83555814719999999" green="0.50561495440000004" blue="0.47103464610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>

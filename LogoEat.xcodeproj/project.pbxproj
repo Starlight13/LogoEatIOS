@@ -25,6 +25,7 @@
 		795DE853265028ED00D6CE04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795DE851265028ED00D6CE04 /* LaunchScreen.storyboard */; };
 		79680A3D26657B6800389E0A /* LogoEatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79680A3C26657B6800389E0A /* LogoEatUITests.swift */; };
 		79917A922666C858007AD9E1 /* RestaurantsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79917A912666C858007AD9E1 /* RestaurantsNetworkService.swift */; };
+		79917A9A2666F2DC007AD9E1 /* LogoEatUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79917A992666F2DC007AD9E1 /* LogoEatUnitTests.swift */; };
 		79A15A7726512341002D2252 /* RestaurantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A15A7626512341002D2252 /* RestaurantsTableViewController.swift */; };
 		79A15A792651241B002D2252 /* BookingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A15A782651241B002D2252 /* BookingsTableViewController.swift */; };
 		79A15A7B26513883002D2252 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A15A7A26513883002D2252 /* RestaurantTableViewCell.swift */; };
@@ -43,6 +44,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		79680A3F26657B6800389E0A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 795DE83A265028EB00D6CE04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 795DE841265028EB00D6CE04;
+			remoteInfo = LogoEat;
+		};
+		79917A9C2666F2DC007AD9E1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 795DE83A265028EB00D6CE04 /* Project object */;
 			proxyType = 1;
@@ -74,6 +82,9 @@
 		79680A3C26657B6800389E0A /* LogoEatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoEatUITests.swift; sourceTree = "<group>"; };
 		79680A3E26657B6800389E0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79917A912666C858007AD9E1 /* RestaurantsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsNetworkService.swift; sourceTree = "<group>"; };
+		79917A972666F2DC007AD9E1 /* LogoEatUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogoEatUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79917A992666F2DC007AD9E1 /* LogoEatUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoEatUnitTests.swift; sourceTree = "<group>"; };
+		79917A9B2666F2DC007AD9E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79A15A7626512341002D2252 /* RestaurantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsTableViewController.swift; sourceTree = "<group>"; };
 		79A15A782651241B002D2252 /* BookingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingsTableViewController.swift; sourceTree = "<group>"; };
 		79A15A7A26513883002D2252 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
@@ -102,6 +113,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		79680A3726657B6800389E0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79917A942666F2DC007AD9E1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -179,6 +197,7 @@
 			children = (
 				795DE844265028EB00D6CE04 /* LogoEat */,
 				79680A3B26657B6800389E0A /* LogoEatUITests */,
+				79917A982666F2DC007AD9E1 /* LogoEatUnitTests */,
 				795DE843265028EB00D6CE04 /* Products */,
 				8DC810213D9B3A50B062C151 /* Pods */,
 				D20512BC5841E8089265D24A /* Frameworks */,
@@ -190,6 +209,7 @@
 			children = (
 				795DE842265028EB00D6CE04 /* LogoEat.app */,
 				79680A3A26657B6800389E0A /* LogoEatUITests.xctest */,
+				79917A972666F2DC007AD9E1 /* LogoEatUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,6 +244,15 @@
 				79917A912666C858007AD9E1 /* RestaurantsNetworkService.swift */,
 			);
 			path = RestaurantsNetworkService;
+			sourceTree = "<group>";
+		};
+		79917A982666F2DC007AD9E1 /* LogoEatUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				79917A992666F2DC007AD9E1 /* LogoEatUnitTests.swift */,
+				79917A9B2666F2DC007AD9E1 /* Info.plist */,
+			);
+			path = LogoEatUnitTests;
 			sourceTree = "<group>";
 		};
 		79A697FA2652AF36001D57E3 /* Application */ = {
@@ -395,6 +424,24 @@
 			productReference = 79680A3A26657B6800389E0A /* LogoEatUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		79917A962666F2DC007AD9E1 /* LogoEatUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79917A9E2666F2DC007AD9E1 /* Build configuration list for PBXNativeTarget "LogoEatUnitTests" */;
+			buildPhases = (
+				79917A932666F2DC007AD9E1 /* Sources */,
+				79917A942666F2DC007AD9E1 /* Frameworks */,
+				79917A952666F2DC007AD9E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79917A9D2666F2DC007AD9E1 /* PBXTargetDependency */,
+			);
+			name = LogoEatUnitTests;
+			productName = LogoEatUnitTests;
+			productReference = 79917A972666F2DC007AD9E1 /* LogoEatUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -409,6 +456,10 @@
 						CreatedOnToolsVersion = 10.1;
 					};
 					79680A3926657B6800389E0A = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 795DE841265028EB00D6CE04;
+					};
+					79917A962666F2DC007AD9E1 = {
 						CreatedOnToolsVersion = 12.5;
 						TestTargetID = 795DE841265028EB00D6CE04;
 					};
@@ -429,6 +480,7 @@
 			targets = (
 				795DE841265028EB00D6CE04 /* LogoEat */,
 				79680A3926657B6800389E0A /* LogoEatUITests */,
+				79917A962666F2DC007AD9E1 /* LogoEatUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -447,6 +499,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		79680A3826657B6800389E0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79917A952666F2DC007AD9E1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -538,6 +597,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		79917A932666F2DC007AD9E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79917A9A2666F2DC007AD9E1 /* LogoEatUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -545,6 +612,11 @@
 			isa = PBXTargetDependency;
 			target = 795DE841265028EB00D6CE04 /* LogoEat */;
 			targetProxy = 79680A3F26657B6800389E0A /* PBXContainerItemProxy */;
+		};
+		79917A9D2666F2DC007AD9E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 795DE841265028EB00D6CE04 /* LogoEat */;
+			targetProxy = 79917A9C2666F2DC007AD9E1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -762,6 +834,46 @@
 			};
 			name = Release;
 		};
+		79917A9F2666F2DC007AD9E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LogoEatUnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "-.LogoEatUnitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LogoEat.app/LogoEat";
+			};
+			name = Debug;
+		};
+		79917AA02666F2DC007AD9E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LogoEatUnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "-.LogoEatUnitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LogoEat.app/LogoEat";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -788,6 +900,15 @@
 			buildConfigurations = (
 				79680A4126657B6800389E0A /* Debug */,
 				79680A4226657B6800389E0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79917A9E2666F2DC007AD9E1 /* Build configuration list for PBXNativeTarget "LogoEatUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79917A9F2666F2DC007AD9E1 /* Debug */,
+				79917AA02666F2DC007AD9E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

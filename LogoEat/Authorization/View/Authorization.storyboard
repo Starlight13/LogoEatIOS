@@ -20,6 +20,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mxm-Z0-t2U">
                                 <rect key="frame" x="87" y="365" width="240" height="66"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="login e-mail"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="Kci-VJ-ATd"/>
                                     <constraint firstAttribute="width" secondItem="Mxm-Z0-t2U" secondAttribute="height" multiplier="40:11" id="syB-eh-MxZ"/>
@@ -30,6 +31,7 @@
                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DNT-4J-jpj">
                                 <rect key="frame" x="87" y="456" width="240" height="66"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="login password"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DNT-4J-jpj" secondAttribute="height" multiplier="40:11" id="661-0a-fRI"/>
                                     <constraint firstAttribute="height" constant="66" id="kbk-SJ-mDx"/>
@@ -39,6 +41,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vld-XH-ejM">
                                 <rect key="frame" x="132" y="573" width="150" height="50"/>
+                                <accessibility key="accessibilityConfiguration" identifier="log-in"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7eL-RC-aeu"/>
                                     <constraint firstAttribute="width" constant="150" id="nfU-Fy-r7e"/>
