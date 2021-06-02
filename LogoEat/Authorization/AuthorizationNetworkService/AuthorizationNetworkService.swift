@@ -11,7 +11,7 @@ import Foundation
 
 class AuthorizationNetworkService {
     private init() {}
-    static func login(email:String, password:String, completion: @escaping(_ dict: [String:Any]) -> ()) {
+    static func login(email:String, password:String, completion: @escaping(_ dict: [String:Any], _ response: HTTPURLResponse) -> ()) {
         guard let url = URL(string: "\(apiEndpoints.baseURL)/login") else {print("Localhost"); return}
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -27,9 +27,10 @@ class AuthorizationNetworkService {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
-        NetworkService.shared.getData(request: request) { (json) in
+        NetworkService.shared.getData(request: request) { (json, response) in
             guard let dict = json as? [String: Any] else {return}
-            completion(dict)
+//            print(response)
+            completion(dict, response)
         }
     }
     
@@ -51,7 +52,7 @@ class AuthorizationNetworkService {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
-        NetworkService.shared.getData(request: request) { (json) in
+        NetworkService.shared.getData(request: request) { (json, response) in
             guard let dict = json as? [String: Any] else {return}
             completion(dict)
         }

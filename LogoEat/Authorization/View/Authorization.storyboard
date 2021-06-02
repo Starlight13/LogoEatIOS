@@ -107,7 +107,7 @@
                             <constraint firstItem="DNT-4J-jpj" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="PVo-Bc-xpi"/>
                             <constraint firstItem="NaU-iZ-ff6" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="RoH-LL-WOn"/>
                             <constraint firstItem="ntE-wh-RkP" firstAttribute="top" secondItem="Vld-XH-ejM" secondAttribute="bottom" constant="20" id="S05-Zf-2m0"/>
-                            <constraint firstItem="NaU-iZ-ff6" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="-100" id="dRJ-ck-hdM"/>
+                            <constraint firstItem="NaU-iZ-ff6" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="-100" id="Zg8-9b-TYN"/>
                             <constraint firstItem="6io-qw-TTD" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="f0g-al-eQm"/>
                             <constraint firstItem="NaU-iZ-ff6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fTN-4E-o3X"/>
                             <constraint firstItem="Mxm-Z0-t2U" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="-50" id="kQo-ap-kIO"/>
@@ -121,6 +121,7 @@
                         <outlet property="emailError" destination="VoR-OZ-gBJ" id="Uhp-Qw-zgm"/>
                         <outlet property="emailTextField" destination="Mxm-Z0-t2U" id="Qz0-wf-03x"/>
                         <outlet property="loginButton" destination="Vld-XH-ejM" id="nQI-6x-ApU"/>
+                        <outlet property="messageText" destination="QYc-7b-A6j" id="MaJ-cB-boj"/>
                         <outlet property="messageView" destination="NaU-iZ-ff6" id="7bj-s7-QhC"/>
                         <outlet property="passwordTextField" destination="DNT-4J-jpj" id="bSP-VN-IU2"/>
                         <outlet property="signupButton" destination="ntE-wh-RkP" id="1cB-ix-nJm"/>

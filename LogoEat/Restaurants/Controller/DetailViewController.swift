@@ -28,7 +28,9 @@ class DetailViewController: UITableViewController, UIGestureRecognizerDelegate{
         super.viewDidLoad()
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 44
+        
         likeButton.addTarget(self, action: #selector(like), for: .touchUpInside)
+        
         setupGestureRecognizer()
         setupDetailScreen()
         setupPlacemark()
@@ -37,6 +39,11 @@ class DetailViewController: UITableViewController, UIGestureRecognizerDelegate{
     
     
     // MARK: - Logic
+    
+    @objc func showMessage() {
+        
+    }
+    
     @objc func like() {
         if #available(iOS 13.0, *) {
             likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)

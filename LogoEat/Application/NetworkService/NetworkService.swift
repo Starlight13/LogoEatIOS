@@ -13,15 +13,16 @@ class NetworkService {
     private init() {}
     static let shared = NetworkService()
     
-    public func getData(request: URLRequest, completion: @escaping (Any) -> ()) {
+    public func getData(request: URLRequest, completion: @escaping (Any, HTTPURLResponse) -> ()) {
         let session = URLSession.shared
         
         session.dataTask(with: request as URLRequest) { data, response, error in
             guard let data = data else {return}
-            
+            let httpResponse = response as! HTTPURLResponse
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
-                completion(json)
+//                print(httpResponse)
+                completion(json, httpResponse)
             } catch {
                 print(error)
             }

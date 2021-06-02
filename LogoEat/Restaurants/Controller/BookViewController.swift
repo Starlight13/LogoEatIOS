@@ -20,12 +20,14 @@ class BookViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var nameError: UILabel!
     @IBOutlet var dateError: UILabel!
     @IBOutlet var numberOfPeopleError: UILabel!
+    @IBOutlet var messageView: UIView!
+    @IBOutlet var messageText: UILabel!
     let datePicker = UIDatePicker()
     
     let nameRegex = "^[a-z а-я A-Z А-Я,.'-]{3,}$"
     let numberOfPeopleRegex = "^([1-9]|1[0-5])$"
     
-    
+    var message = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +42,26 @@ class BookViewController: UIViewController, UITextFieldDelegate {
     
     @objc func book(sender: UIButton){
         if allIsValid() {
-            let booking = Booking(name: nameTextField.text!, numberOfPeople: Int(numberOfPeopleTextField.text!)!, date: datePicker.date, restaurant: currentRestaurant!)
-            LocalStorageManager.saveObject(booking)
-            self.dismiss(animated: true, completion: nil)
+            let group = DispatchGroup()
+            group.enter()
+            RestaurantsNetworkService.bookRestaurant(restaurantId: currentRestaurant!.id, bookingDate: datePicker.date.millisecondsSince1970, userName: nameTextField.text!, numberOfPeople: Int(numberOfPeopleTextField.text!)!) { (dict) in
+                guard let message = dict["message"] as? String else {return}
+                self.message = message
+                group.leave()
+            }
+            group.notify(queue: .main){
+                if self.message == "OK" {
+                    self.messageText.text = "Booking created successfully"
+                    self.messageView.backgroundColor = UIColor(red: 0.506, green: 0.698, blue: 0.604, alpha: 1)
+                    self.messageView.animShow(parameter: 0)
+                    let booking = Booking(name: self.nameTextField.text!, numberOfPeople: Int(self.numberOfPeopleTextField.text!)!, date: self.datePicker.date, restaurant: self.currentRestaurant!)
+                    LocalStorageManager.saveObject(booking)
+                    return
+                }
+                self.messageText.text = "Something went wrong, try again later"
+                self.messageView.backgroundColor = UIColor(red: 0.506, green: 0.698, blue: 0.604, alpha: 1)
+                self.messageView.animShow(parameter: 0)
+            }
         } else {
             shake(errorLabel: nameError)
             shake(errorLabel: dateError)
@@ -200,5 +219,15 @@ class BookViewController: UIViewController, UITextFieldDelegate {
 extension String {
     func matches(_ regex: String) -> Bool {
         return (self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil)
+    }
+}
+
+extension Date {
+    var millisecondsSince1970:Int64 {
+        return Int64((self.timeIntervalSince1970 * 1000.0).rounded())
+    }
+
+    init(milliseconds:Int64) {
+        self = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000)
     }
 }

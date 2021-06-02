@@ -48,7 +48,7 @@ class Restaurant: Object, Codable {
         self.init()
         self.id = dictionary["id"] as? Int ?? 0
         self.name = dictionary["name"] as? String ?? ""
-        self.rating = dictionary["rating"] as? Double ?? 0
+        self.rating = dictionary["ratting"] as? Double ?? 0
         self.cuisine = "Ukrainian, Italian"
         self.restaurantDescription = dictionary["description"] as? String ?? ""
         self.location = dictionary["address"] as? String ?? ""

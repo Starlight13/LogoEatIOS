@@ -16,10 +16,14 @@ class LoginViewController: UIViewController {
     @IBOutlet var signupButton: UIButton!
     @IBOutlet var emailError: UILabel!
     @IBOutlet var messageView: UIView!
+    @IBOutlet var messageText: UILabel!
     
     let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     
     var userCreated = false
+    
+    var response: HTTPURLResponse?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,14 +36,17 @@ class LoginViewController: UIViewController {
     }
     
     @objc func showMessage() {
+        messageText.text = "User created successfully"
+        messageView.backgroundColor = UIColor(red: 0.506, green: 0.698, blue: 0.604, alpha: 1)
         messageView.animShow(parameter: 40)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        if userCreated == true {
-            messageView.animShow(parameter: 40)
-        }
+   func showErrorMessage() {
+        messageText.text = "Incorrect email or password"
+        messageView.backgroundColor = UIColor(red: 0.878, green: 0.478, blue: 0.373, alpha: 1)
+        messageView.animShow(parameter: 40)
     }
+    
     //MARK: - Logic
     
     func validate() -> Bool{
@@ -73,18 +80,29 @@ class LoginViewController: UIViewController {
     }
     
     @objc func login (sender: UIButton) {
-        if validate(){
+//        if validate(){
             guard let email = emailTextField.text else { return }
             guard let password = passwordTextField.text else {return}
             let group = DispatchGroup()
             group.enter()
-            AuthorizationNetworkService.login(email: email, password: password) {(dict) in
+            AuthorizationNetworkService.login(email: email, password: password) {(dict, response) in
+                self.response = response
+                if response.statusCode == 500 {
+                    group.leave()
+                    return
+                }
                 guard let token = dict["token"] as? String else {return}
+                self.response = response
                 Token.token = token;
                 group.leave()
             }
             
             group.notify(queue: .main){
+                if self.response!.statusCode == 500 {
+                    print("Status: 500")
+                    self.showErrorMessage()
+                    return
+                }
                 if Token.token != nil {
                     let storyboard = UIStoryboard(name: "Restaurant", bundle: .main)
                     let controller = storyboard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
@@ -96,7 +114,7 @@ class LoginViewController: UIViewController {
                     
                 }
             }
-        }
+//        }
         
         
     }

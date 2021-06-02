@@ -24,7 +24,7 @@ class SettingsNetworkService {
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("Bearer \(Token.token!)", forHTTPHeaderField: "Authorization")
         
-        NetworkService.shared.getData(request: request) { (json) in
+        NetworkService.shared.getData(request: request) { (json, response) in
             guard let dict = json as? [String: Any] else {return}
             completion(dict)
         }
