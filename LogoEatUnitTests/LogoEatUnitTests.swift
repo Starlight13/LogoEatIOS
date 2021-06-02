@@ -20,17 +20,23 @@ class LogoEatUnitTests: XCTestCase {
     }
 
     func testSingupWithExistingEmail() throws {
+        let expectation = expectation(description: "Try to sing up")
         AuthorizationNetworkService.signup(name: "Name", phoneNumber: "+380673113311", email: "o.romanishina@gmail.com", password: "Nazar2020") { (dict) in
             guard let message = dict["message"] as? String else {return}
             XCTAssertEqual(message, "Email is already Occupied.")
+            expectation.fulfill()
         }
+        wait(for: [expectation], timeout: 5)
     }
 
-    func testChangePassword() throws {
-        SettingsNetworkService.makeChangeRequest(parameters: ["password": "Nazar2021"], requestUrl: "update_password") { (dict) in
+    func testChangeName() throws {
+        let expectation = expectation(description: "Changed name")
+        SettingsNetworkService.makeChangeRequest(parameters: ["name": "Olichka"], requestUrl: "update_name") { (dict) in
             guard let message = dict["message"] as? String else {return}
-            XCTAssertEqual(message, "Password was changed.")
+            XCTAssertEqual(message, "Name was changed.")
+            expectation.fulfill()
         }
+        wait(for: [expectation], timeout: 5)
     }
 
 }
